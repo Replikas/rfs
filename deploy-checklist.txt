@@ -1,0 +1,47 @@
+WISPBYTE DEPLOYMENT - QUICK CHECKLIST
+=====================================
+
+BEFORE DEPLOYING:
+[ ] Test site locally: npm run dev
+[ ] Build production: npm run build
+[ ] Test production: npm start
+[ ] TMDB API key added to .env.local
+
+WISPBYTE SETUP:
+[ ] Create account at wispbyte.com
+[ ] Create new Node.js project
+[ ] Set Node version: 18.x or 20.x
+[ ] Set build command: npm install && npm run build
+[ ] Set start command: npm start
+[ ] Set port: 3000
+
+ENVIRONMENT VARIABLES (Add in Wispbyte):
+[ ] NEXT_PUBLIC_TMDB_API_KEY=02269a98332ab91c6579fa12ef995e5a
+[ ] NODE_ENV=production
+
+DEPLOY:
+[ ] Upload code (Git or ZIP)
+[ ] Click Deploy
+[ ] Wait for build (2-5 min)
+[ ] Site goes live!
+
+TEST DEPLOYMENT:
+[ ] Visit your-app.wispbyte.app
+[ ] Check home page loads
+[ ] Check thumbnails appear
+[ ] Visit /admin
+[ ] Test episode pages
+
+AFTER DEPLOYMENT:
+[ ] Share URL with friends
+[ ] Set up Cloudflare R2 for videos (see CLOUDFLARE_R2_SETUP.md)
+[ ] Upload episodes via admin panel
+
+YOUR SITE URLS:
+Main: https://your-app.wispbyte.app
+Admin: https://your-app.wispbyte.app/admin
+
+IMPORTANT NOTES:
+- Videos currently save locally (limited space on Wispbyte)
+- Set up Cloudflare R2 (~$1.50/month) for proper video storage
+- Don't upload all episodes until cloud storage is configured!
