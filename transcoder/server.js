@@ -13,6 +13,16 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const R2_PUBLIC_URL = 'https://pub-31bfa27fce4142d7895e90af0a51d430.r2.dev';
 
+// Check if FFmpeg is available
+const { exec } = require('child_process');
+exec('ffmpeg -version', (error, stdout) => {
+  if (error) {
+    console.error('❌ FFmpeg not found!', error);
+  } else {
+    console.log('✅ FFmpeg is available:', stdout.split('\n')[0]);
+  }
+});
+
 // Enable CORS for all origins
 app.use(cors());
 
@@ -107,7 +117,9 @@ app.get('/hls/:episodeId/playlist.m3u8', async (req, res) => {
         res.send(playlist);
       })
       .on('error', (err) => {
-        console.error('FFmpeg error:', err);
+        console.error('❌ FFmpeg error for episode', episodeId);
+        console.error('Error message:', err.message);
+        console.error('Error stack:', err.stack);
         res.status(500).json({ error: 'Transcoding failed', details: err.message });
       })
       .run();
