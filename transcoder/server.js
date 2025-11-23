@@ -81,14 +81,22 @@ app.get('/hls/:episodeId/playlist.m3u8', async (req, res) => {
 
     console.log(`Transcoding episode ${episodeId} to HLS...`);
 
-    // Download and transcode to HLS
+    // Download video to temp file first (more reliable than streaming)
+    const tempVideoPath = path.join(episodeDir, 'temp.mp4');
+    console.log(`Downloading video from R2...`);
+    
     const response = await fetch(videoUrl);
     if (!response.ok) {
       throw new Error(`Failed to fetch video: ${response.statusText}`);
     }
 
+    // Save to temp file
+    const fileStream = fs.createWriteStream(tempVideoPath);
+    await streamPipeline(response.body, fileStream);
+    console.log(`Download complete. Starting transcoding...`);
+
     // Transcode video to HLS format (iPhone compatible)
-    ffmpeg(response.body)
+    ffmpeg(tempVideoPath)
       .outputOptions([
         '-c:v libx264',
         '-profile:v baseline',
@@ -109,7 +117,13 @@ app.get('/hls/:episodeId/playlist.m3u8', async (req, res) => {
         console.log(`Transcoding: ${Math.floor(progress.percent || 0)}%`);
       })
       .on('end', () => {
-        console.log(`Transcoding complete for episode ${episodeId}`);
+        console.log(`✅ Transcoding complete for episode ${episodeId}`);
+        
+        // Clean up temp file
+        if (fs.existsSync(tempVideoPath)) {
+          fs.unlinkSync(tempVideoPath);
+        }
+        
         // Serve the generated playlist
         const playlist = fs.readFileSync(playlistPath, 'utf8');
         res.setHeader('Content-Type', 'application/vnd.apple.mpegurl');
@@ -120,6 +134,12 @@ app.get('/hls/:episodeId/playlist.m3u8', async (req, res) => {
         console.error('❌ FFmpeg error for episode', episodeId);
         console.error('Error message:', err.message);
         console.error('Error stack:', err.stack);
+        
+        // Clean up temp file
+        if (fs.existsSync(tempVideoPath)) {
+          fs.unlinkSync(tempVideoPath);
+        }
+        
         res.status(500).json({ error: 'Transcoding failed', details: err.message });
       })
       .run();
