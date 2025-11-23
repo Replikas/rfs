@@ -146,20 +146,6 @@ export default function WatchPage() {
 
       <div className="max-w-5xl mx-auto px-4 md:px-8 pb-12">
         
-        {/* Video Loading Notice */}
-        {audioError && (
-          <div className="mb-6 bg-cyan-900/20 border border-cyan-500/50 rounded-lg p-4 backdrop-blur-sm">
-            <h3 className="text-cyan-400 font-bold mb-2 flex items-center gap-2">
-              📱 Video Loading...
-            </h3>
-            <p className="text-sm text-gray-300 mb-2">
-              This video is being optimized for your device. First-time loading may take 10-30 seconds.
-            </p>
-            <p className="text-xs text-gray-400">
-              Next time you watch, it will load instantly!
-            </p>
-          </div>
-        )}
 
         {/* Video Player */}
         <div className="aspect-video bg-zinc-900 rounded-xl overflow-hidden mb-8 border border-white/10 relative shadow-2xl">
