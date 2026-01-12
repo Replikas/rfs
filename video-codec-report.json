@@ -1,0 +1,488 @@
+[
+  {
+    "episodeNum": 1,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 2,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 3,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 4,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 5,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 6,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 7,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 8,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 9,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 10,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 11,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 12,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 13,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 14,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 15,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 16,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 17,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 18,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 19,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 20,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 21,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 22,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 23,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 24,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 25,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 26,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 27,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 28,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 29,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 30,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 31,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 32,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 33,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 34,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 35,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 36,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 37,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 38,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 39,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 40,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 41,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 42,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 43,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 44,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 45,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 46,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 47,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 48,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 49,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 50,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 51,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 52,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 53,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 54,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 55,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 56,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 57,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 58,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 59,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 60,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 61,
+    "videoCodec": "hevc",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 62,
+    "videoCodec": "av1",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 63,
+    "videoCodec": "av1",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 64,
+    "videoCodec": "av1",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 65,
+    "videoCodec": "av1",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 66,
+    "videoCodec": "av1",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 67,
+    "videoCodec": "av1",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 68,
+    "videoCodec": "av1",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 69,
+    "videoCodec": "av1",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 70,
+    "videoCodec": "av1",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 71,
+    "videoCodec": "av1",
+    "audioCodec": "aac",
+    "iphoneCompatible": false
+  },
+  {
+    "episodeNum": 72,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 73,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 74,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 75,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 76,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 77,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 78,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 79,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 80,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  },
+  {
+    "episodeNum": 81,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "iphoneCompatible": true
+  }
+]

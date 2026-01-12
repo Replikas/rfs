@@ -1,16 +1,21 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, SkipForward } from 'lucide-react';
 import { Episode } from '@/lib/api';
 import VideoPlayer from '@/components/VideoPlayer';
 
-// Generate video URL from R2
+// Generate video URL from Cloudflare R2
 function getVideoUrl(episodeId: string) {
-  const publicUrl = 'https://pub-31bfa27fce4142d7895e90af0a51d430.r2.dev';
-  return `${publicUrl}/videos/episode-${episodeId}.mp4`;
+  // Episodes with cache-busting timestamps for fixes
+  // - 72-73: fixed on Dec 7, 2025
+  // - 67: fixed on Jan 12, 2026
+  const timestamp = (episodeId === '72' || episodeId === '73') ? '20251207' 
+    : episodeId === '67' ? '20260112'
+    : '3';
+  return `https://pub-31bfa27fce4142d7895e90af0a51d430.r2.dev/videos/episode-${episodeId}.mp4?v=${timestamp}`;
 }
 
 export default function WatchPage() {
@@ -21,7 +26,7 @@ export default function WatchPage() {
   const [episode, setEpisode] = useState<Episode | null>(null);
   const [showNextEpisode, setShowNextEpisode] = useState(false);
   const [countdown, setCountdown] = useState(10);
-  const [loading, setLoading] = useState(true);
+  const [videoLoading, setVideoLoading] = useState(true);
   const [backdrop, setBackdrop] = useState<string>('');
   const [showNextPreview, setShowNextPreview] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -31,13 +36,17 @@ export default function WatchPage() {
   const videoUrl = getVideoUrl(id);
   const nextEpisodeId = parseInt(id) < 81 ? parseInt(id) + 1 : null;
 
+  // Reset video loading when episode changes
+  useEffect(() => {
+    setVideoLoading(true);
+  }, [id]);
+
   useEffect(() => {
     fetch(`/api/episodes`)
       .then(res => res.json())
       .then(episodes => {
         const ep = episodes.find((e: Episode) => e.id === parseInt(id));
         setEpisode(ep);
-        setLoading(false);
         
         // Fetch backdrop
         if (ep) {
@@ -100,14 +109,6 @@ export default function WatchPage() {
     }
   };
 
-  if (loading || !episode) {
-    return (
-      <div className="min-h-screen bg-black flex items-center justify-center">
-        <div className="text-white">Loading...</div>
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen bg-black">
       {/* Backdrop Banner */}
@@ -130,22 +131,33 @@ export default function WatchPage() {
             Back to Episodes
           </Link>
 
-          <div className="max-w-5xl mx-auto w-full">
-            <div className="flex items-center gap-3 mb-3">
-              <span className="text-sm font-bold text-[var(--accent)] bg-[var(--accent)]/20 px-3 py-1 rounded-full">
-                {episode.episode}
-              </span>
-              <span className="text-sm text-gray-300">{episode.air_date}</span>
+          {episode && (
+            <div className="max-w-5xl mx-auto w-full">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-sm font-bold text-[var(--accent)] bg-[var(--accent)]/20 px-3 py-1 rounded-full">
+                  {episode.episode}
+                </span>
+                <span className="text-sm text-gray-300">{episode.air_date}</span>
+              </div>
+              <h1 className="text-4xl md:text-6xl font-black text-white drop-shadow-2xl mb-4">
+                {episode.name}
+              </h1>
             </div>
-            <h1 className="text-4xl md:text-6xl font-black text-white drop-shadow-2xl mb-4">
-              {episode.name}
-            </h1>
-          </div>
+          )}
         </div>
       </div>
 
       <div className="max-w-5xl mx-auto px-4 md:px-8 pb-12">
         
+        {/* Report Issue */}
+        <div className="flex justify-end mb-1">
+          <Link
+            href={`/report/${id}`}
+            className="text-[10px] text-white/30 hover:text-white/60 transition-colors"
+          >
+            Report issue
+          </Link>
+        </div>
 
         {/* Video Player */}
         <div className="aspect-video bg-zinc-900 rounded-xl overflow-hidden mb-8 border border-white/10 relative shadow-2xl">
@@ -157,39 +169,29 @@ export default function WatchPage() {
             onTimeUpdate={(time, dur) => {
               setCurrentTime(time);
               setDuration(dur);
+              setVideoLoading(false); // Video is playing
               
               // Show next episode preview in last 30 seconds
               if (dur - time <= 30 && dur - time > 0) {
                 setShowNextPreview(true);
               }
             }}
-            onError={() => setAudioError(true)}
+            onError={() => {
+              setAudioError(true);
+              setVideoLoading(false);
+            }}
           />
 
-          {/* Small Next Episode Preview (appears last 30s) */}
-          {showNextPreview && !showNextEpisode && nextEpisodeId && (
-            <div className="absolute bottom-20 right-4 z-40 animate-in slide-in-from-right">
-              <div className="bg-black/90 backdrop-blur-md rounded-lg p-4 border border-white/20 shadow-2xl max-w-xs">
-                <div className="flex items-start gap-3">
-                  <SkipForward className="w-5 h-5 text-[var(--accent)] flex-shrink-0 mt-1" />
-                  <div className="flex-1">
-                    <p className="text-xs text-gray-400 mb-1">Up Next</p>
-                    <p className="text-sm font-bold text-white mb-2">Episode {nextEpisodeId}</p>
-                    <button
-                      onClick={skipToNext}
-                      className="w-full px-3 py-1.5 bg-[var(--accent)] hover:bg-[var(--accent-glow)] rounded text-xs font-bold text-white transition-colors"
-                    >
-                      Play Now
-                    </button>
-                  </div>
-                  <button
-                    onClick={() => setShowNextPreview(false)}
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    ✕
-                  </button>
-                </div>
-              </div>
+          {/* Skip to Next Episode Button (during credits - last 30 seconds) */}
+          {showNextPreview && nextEpisodeId && !showNextEpisode && (
+            <div className="absolute bottom-20 right-6 z-50 animate-fade-in">
+              <button
+                onClick={skipToNext}
+                className="flex items-center gap-3 px-6 py-4 bg-white/95 hover:bg-white rounded-lg font-bold text-black transition-all transform hover:scale-105 shadow-2xl"
+              >
+                <span className="text-lg">Skip to Next Episode</span>
+                <SkipForward className="w-6 h-6" />
+              </button>
             </div>
           )}
 
