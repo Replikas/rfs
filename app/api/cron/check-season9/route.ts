@@ -97,32 +97,46 @@ function getBestVersions(episodes: any[]) {
   return Array.from(episodeMap.values()).sort((a, b) => a.episode - b.episode);
 }
 
-// Send notification via email using Resend (already in project)
+// Send notification via Discord webhook
 async function sendNotification(episodes: any[], domain: string) {
-  // Try to use Resend if available
-  try {
-    const { Resend } = await import('resend');
-    const resend = new Resend(process.env.RESEND_API_KEY);
-    
-    if (!process.env.RESEND_API_KEY || !process.env.NOTIFICATION_EMAIL) {
-      console.log('No notification config, skipping email');
-      return;
-    }
+  const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
+  
+  if (!webhookUrl) {
+    console.log('No Discord webhook configured, skipping notification');
+    return;
+  }
 
+  try {
     const episodeList = episodes.map(ep => 
-      `• S09E${String(ep.episode).padStart(2, '0')} - ${ep.quality} - ${ep.fileSize}`
+      `• **S09E${String(ep.episode).padStart(2, '0')}** - ${ep.quality} - ${ep.fileSize}`
     ).join('\n');
 
-    await resend.emails.send({
-      from: 'RickFlix <onboarding@resend.dev>',
-      to: process.env.NOTIFICATION_EMAIL,
-      subject: '🎉 Rick and Morty Season 9 Found!',
-      text: `Season 9 episodes detected on EZTV!\n\n${episodeList}\n\nDownload from: https://${domain}/search/rick-and-morty`
+    await fetch(webhookUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        content: '🎉 **Rick and Morty Season 9 Found!**',
+        embeds: [{
+          title: 'New Episodes Detected on EZTV',
+          description: episodeList,
+          color: 0x00ff00,
+          fields: [
+            {
+              name: 'Download Link',
+              value: `[EZTV Search](https://${domain}/search/rick-and-morty)`
+            }
+          ],
+          footer: {
+            text: 'RickFlix Auto Monitor'
+          },
+          timestamp: new Date().toISOString()
+        }]
+      })
     });
     
-    console.log('Notification email sent');
+    console.log('Discord notification sent');
   } catch (e) {
-    console.log('Could not send notification:', e);
+    console.log('Could not send Discord notification:', e);
   }
 }
 
