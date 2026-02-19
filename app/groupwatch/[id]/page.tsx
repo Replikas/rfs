@@ -119,6 +119,17 @@ export default function GroupWatchPage() {
         const video = document.querySelector('video');
         if (video) {
           video.currentTime = data.time;
+          
+          // Force Reactivate Subtitles on client sync seek
+          if (video.textTracks && video.textTracks.length > 0) {
+            const track = video.textTracks[0];
+            if (track.mode === 'showing') {
+              track.mode = 'hidden';
+              setTimeout(() => {
+                if (track) track.mode = 'showing';
+              }, 50);
+            }
+          }
         }
         setTimeout(() => { isUpdatingFromRemote.current = false; }, 1000);
       });
@@ -185,6 +196,18 @@ export default function GroupWatchPage() {
       const video = document.querySelector('video');
       if (video) {
         broadcastEvent('seek', { time: video.currentTime });
+        
+        // Fix: Reactivate subtitle mode after a seek. 
+        // Some browsers disable or glitch the textTrack mode during rapid cross-origin fetching.
+        if (video.textTracks && video.textTracks.length > 0) {
+          const track = video.textTracks[0];
+          if (track.mode === 'showing') {
+            track.mode = 'hidden';
+            setTimeout(() => {
+              if (track) track.mode = 'showing';
+            }, 50);
+          }
+        }
       }
     }
   };
