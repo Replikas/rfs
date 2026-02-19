@@ -15,13 +15,6 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { channel, event, data } = body;
 
-    // Check if Pusher is properly configured
-    if (!process.env.PUSHER_APP_ID || !process.env.PUSHER_SECRET) {
-      console.warn('⚠️ Pusher not configured - GroupWatch sync disabled');
-      // Return success to avoid breaking the UI, but sync won't work
-      return NextResponse.json({ success: true, warning: 'Sync disabled - Pusher not configured' });
-    }
-
     // Trigger the event
     await pusher.trigger(channel, event, data);
 

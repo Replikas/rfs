@@ -80,8 +80,8 @@ export default function GroupWatchPage() {
 
   useEffect(() => {
     // Initialize Pusher
-    const pusherKey = process.env.NEXT_PUBLIC_PUSHER_KEY;
-    if (!pusherRef.current && roomId && pusherKey && pusherKey !== '8f7c0c0e0f4c4e4f4f4f') {
+    const pusherKey = process.env.NEXT_PUBLIC_PUSHER_KEY || '8f7c0c0e0f4c4e4f4f4f';
+    if (!pusherRef.current && roomId && pusherKey) {
       pusherRef.current = new Pusher(pusherKey, {
         cluster: process.env.NEXT_PUBLIC_PUSHER_CLUSTER || 'mt1',
       });
@@ -145,10 +145,6 @@ export default function GroupWatchPage() {
   }, [id, roomId, username]);
 
   const broadcastEvent = async (event: string, data: any) => {
-    if (!process.env.NEXT_PUBLIC_PUSHER_KEY || process.env.NEXT_PUBLIC_PUSHER_KEY === '8f7c0c0e0f4c4e4f4f4f') {
-      console.warn('Skipping broadcast: Pusher not configured');
-      return;
-    }
     try {
       await fetch('/api/pusher', {
         method: 'POST',
