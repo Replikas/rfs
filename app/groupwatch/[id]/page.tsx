@@ -60,14 +60,15 @@ export default function GroupWatchPage() {
     }
     
     setRoomId(room);
+  }, []);
 
-    // Fetch episode data and final video URL
+  // Fetch episode data and final video URL
   useEffect(() => {
     fetch(`/api/episodes`)
       .then(res => res.json())
-      .then(episodes => {
-        const ep = episodes.find((e: Episode) => e.id === parseInt(id));
-        setEpisode(ep);
+      .then((episodes: Episode[]) => {
+        const ep = episodes.find((e) => e.id === parseInt(id));
+        if (ep) setEpisode(ep);
         
         // Use dynamic URL if provided, otherwise fallback to R2
         const finalUrl = (ep && ep.url && (ep.url.includes('.mp4') || ep.url.includes('.m3u8'))) 
@@ -78,14 +79,14 @@ export default function GroupWatchPage() {
   }, [id]);
 
   useEffect(() => {
-    // Generate username
+    // Initialize Pusher
     const pusherKey = process.env.NEXT_PUBLIC_PUSHER_KEY;
-    if (!pusherRef.current && room && pusherKey && pusherKey !== '8f7c0c0e0f4c4e4f4f4f') {
+    if (!pusherRef.current && roomId && pusherKey && pusherKey !== '8f7c0c0e0f4c4e4f4f4f') {
       pusherRef.current = new Pusher(pusherKey, {
         cluster: process.env.NEXT_PUBLIC_PUSHER_CLUSTER || 'mt1',
       });
 
-      const channel = pusherRef.current.subscribe(`groupwatch-${room}`);
+      const channel = pusherRef.current.subscribe(`groupwatch-${roomId}`);
       channelRef.current = channel;
 
       // Listen for play events
@@ -133,7 +134,7 @@ export default function GroupWatchPage() {
       });
 
       // Broadcast join
-      broadcastEvent('join', { user });
+      broadcastEvent('join', { user: username });
     }
 
     return () => {
@@ -141,7 +142,7 @@ export default function GroupWatchPage() {
         pusherRef.current.disconnect();
       }
     };
-  }, [id]);
+  }, [id, roomId, username]);
 
   const broadcastEvent = async (event: string, data: any) => {
     if (!process.env.NEXT_PUBLIC_PUSHER_KEY || process.env.NEXT_PUBLIC_PUSHER_KEY === '8f7c0c0e0f4c4e4f4f4f') {
