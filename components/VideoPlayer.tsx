@@ -31,7 +31,7 @@ export default function VideoPlayer({
   
   // Generate subtitle URL
   const subtitleUrl = episodeId 
-    ? `https://pub-31bfa27fce4142d7895e90af0a51d430.r2.dev/subtitles/episode-${episodeId}-en.vtt`
+    ? `/subtitles/episode-${episodeId}-en.vtt`
     : null;
   
   // Sync enableSubtitles prop with state

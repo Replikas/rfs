@@ -10,9 +10,7 @@ import VideoPlayer from '@/components/VideoPlayer';
 
 // Generate video URL from Cloudflare R2
 function getVideoUrl(episodeId: string) {
-  // Episodes 72-73 fixed on Dec 7, 2025 - use timestamp to bust cache
-  const timestamp = (episodeId === '72' || episodeId === '73') ? '20251207' : '3';
-  return `https://pub-31bfa27fce4142d7895e90af0a51d430.r2.dev/videos/episode-${episodeId}.mp4?v=${timestamp}`;
+  return `https://pub-31bfa27fce4142d7895e90af0a51d430.r2.dev/videos/episode-${episodeId}.mp4`;
 }
 
 // Generate a unique room ID
@@ -36,6 +34,7 @@ export default function GroupWatchPage() {
   const [username, setUsername] = useState('');
   const [isEditingUsername, setIsEditingUsername] = useState(false);
   const [tempUsername, setTempUsername] = useState('');
+  const [videoUrlState, setVideoUrlState] = useState('');
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const pusherRef = useRef<Pusher | null>(null);
   const channelRef = useRef<any>(null);
@@ -62,18 +61,28 @@ export default function GroupWatchPage() {
     
     setRoomId(room);
 
-    // Fetch episode data
+    // Fetch episode data and final video URL
+  useEffect(() => {
     fetch(`/api/episodes`)
       .then(res => res.json())
       .then(episodes => {
         const ep = episodes.find((e: Episode) => e.id === parseInt(id));
         setEpisode(ep);
+        
+        // Use dynamic URL if provided, otherwise fallback to R2
+        const finalUrl = (ep && ep.url && (ep.url.includes('.mp4') || ep.url.includes('.m3u8'))) 
+          ? ep.url 
+          : getVideoUrl(id);
+        setVideoUrlState(finalUrl);
       });
+  }, [id]);
 
-    // Initialize Pusher
-    if (!pusherRef.current && room) {
-      pusherRef.current = new Pusher('8f7c0c0e0f4c4e4f4f4f', {
-        cluster: 'mt1',
+  useEffect(() => {
+    // Generate username
+    const pusherKey = process.env.NEXT_PUBLIC_PUSHER_KEY;
+    if (!pusherRef.current && room && pusherKey && pusherKey !== '8f7c0c0e0f4c4e4f4f4f') {
+      pusherRef.current = new Pusher(pusherKey, {
+        cluster: process.env.NEXT_PUBLIC_PUSHER_CLUSTER || 'mt1',
       });
 
       const channel = pusherRef.current.subscribe(`groupwatch-${room}`);
@@ -135,6 +144,10 @@ export default function GroupWatchPage() {
   }, [id]);
 
   const broadcastEvent = async (event: string, data: any) => {
+    if (!process.env.NEXT_PUBLIC_PUSHER_KEY || process.env.NEXT_PUBLIC_PUSHER_KEY === '8f7c0c0e0f4c4e4f4f4f') {
+      console.warn('Skipping broadcast: Pusher not configured');
+      return;
+    }
     try {
       await fetch('/api/pusher', {
         method: 'POST',
@@ -301,10 +314,11 @@ export default function GroupWatchPage() {
           <div className="lg:col-span-3">
             <div className="aspect-video bg-zinc-900 rounded-xl overflow-hidden border border-white/10 relative shadow-2xl">
               <VideoPlayer
-                src={videoUrl}
+                src={videoUrlState || videoUrl}
                 episodeId={id}
                 autoPlay={false}
-                showCCButton={false}
+                showCCButton={true}
+                enableSubtitles={true}
                 onTimeUpdate={(time) => {
                   setSyncedTime(time);
                 }}
@@ -349,10 +363,10 @@ export default function GroupWatchPage() {
               </p>
             </div>
 
-            {/* Subtitle Notice */}
-            <div className="mt-4 p-4 bg-amber-500/10 border border-amber-500/30 rounded-lg">
-              <p className="text-sm text-amber-200">
-                <strong>⚠️ Note:</strong> Subtitles are currently not available in GroupWatch. Use regular watch mode if you need subtitles.
+            {/* Subtitle Support */}
+            <div className="mt-4 p-4 bg-blue-500/10 border border-blue-500/30 rounded-lg">
+              <p className="text-sm text-blue-200">
+                <strong>💬 Subs Enabled:</strong> Subtitles are now synced! Use the <strong>CC</strong> button in the player to toggle them.
               </p>
             </div>
 

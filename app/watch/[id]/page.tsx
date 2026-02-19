@@ -163,6 +163,8 @@ export default function WatchPage() {
             src={finalVideoUrl}
             episodeId={id}
             autoPlay={true}
+            showCCButton={true}
+            enableSubtitles={true}
             onEnded={handleVideoEnd}
             onTimeUpdate={(time, dur) => {
               setCurrentTime(time);
