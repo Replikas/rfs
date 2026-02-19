@@ -204,3 +204,30 @@ video::-webkit-media-text-track-display {
   background-origin: border-box;
   background-clip: padding-box, border-box;
 }
+
+/* Portal Transition Effect */
+.portal-swallow {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: radial-gradient(circle, var(--accent-glow) 0%, var(--accent) 50%, transparent 100%);
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.portal-swallow.active {
+  opacity: 1;
+  transform: scale(4);
+}
+
+@keyframes portal-swirl {
+  0% { transform: rotate(0deg) scale(0); opacity: 0; }
+  50% { transform: rotate(180deg) scale(2); opacity: 1; }
+  100% { transform: rotate(360deg) scale(4); opacity: 0; }
+}
+
+.animate-portal {
+  animation: portal-swirl 0.8s ease-in-out forwards;
+}

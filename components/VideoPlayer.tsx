@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { saveWatchProgress, getWatchProgress } from '@/lib/watchProgress';
 
 interface VideoPlayerProps {
   src: string;
@@ -138,6 +139,17 @@ export default function VideoPlayer({
     const handleTimeUpdate = () => {
       if (onTimeUpdate && video.duration) {
         onTimeUpdate(video.currentTime, video.duration);
+      }
+      
+      // Save progress periodically (throttled by the timeupdate event frequency)
+      if (episodeId && video.duration > 0 && Math.floor(video.currentTime) % 5 === 0) {
+        saveWatchProgress({
+          episodeId: parseInt(episodeId),
+          currentTime: video.currentTime,
+          duration: video.duration,
+          lastWatched: Date.now(),
+          completed: video.currentTime / video.duration > 0.95
+        });
       }
     };
 

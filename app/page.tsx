@@ -1,12 +1,10 @@
-import { getAllEpisodes, groupEpisodesBySeason } from '@/lib/api';
-import SeasonSection from '@/components/SeasonSection';
+import { getAllEpisodes } from '@/lib/api';
+import ClientHome from '@/components/ClientHome';
 import { getThumbnailFromEpisodeCode, getEpisodeSummary } from '@/lib/tmdb';
 import Link from 'next/link';
 
 export default async function Home() {
   const episodes = await getAllEpisodes();
-  const episodesBySeason = groupEpisodesBySeason(episodes);
-  const seasons = Object.keys(episodesBySeason).sort();
 
   // Fetch all thumbnails and summaries
   const thumbnails: Record<number, string> = {};
@@ -51,43 +49,21 @@ export default async function Home() {
         </div>
       </div>
 
-      {/* Season Rows - Netflix Style */}
-      <div id="seasons" className="pt-20 pb-12">
-        {seasons.map((season) => (
-          <SeasonSection 
-            key={season} 
-            season={season} 
-            episodes={episodesBySeason[season]}
-            thumbnails={thumbnails}
-            summaries={summaries}
-          />
-        ))}
-      </div>
+      <ClientHome 
+        initialEpisodes={episodes} 
+        thumbnails={thumbnails} 
+        summaries={summaries} 
+      />
 
-      {/* Modern Footer */}
       <footer className="relative px-4 md:px-12 py-12 border-t border-white/5 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <div className="text-xs text-gray-600 font-medium">
             Created by <span className="text-[var(--accent)]">rep</span> © 2025
           </div>
           <div className="flex items-center gap-4">
-            <Link 
-              href="/about"
-              className="text-xs text-gray-600 hover:text-[var(--accent)] transition-colors"
-            >
-              About & Legal
-            </Link>
-            <Link 
-              href="https://ko-fi.com/replika"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-gray-600 hover:text-[var(--accent)] transition-colors"
-            >
-              Ko-fi
-            </Link>
-            <div className="text-xs text-gray-700 tracking-wider">
-              RICKFLIX™
-            </div>
+            <a href="/about" className="text-xs text-gray-600 hover:text-[var(--accent)] transition-colors">About & Legal</a>
+            <a href="https://ko-fi.com/replika" target="_blank" rel="noopener noreferrer" className="text-xs text-gray-600 hover:text-[var(--accent)] transition-colors">Ko-fi</a>
+            <div className="text-xs text-gray-700 tracking-wider">RICKFLIX™</div>
           </div>
         </div>
       </footer>

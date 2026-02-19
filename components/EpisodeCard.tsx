@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Episode } from '@/lib/api';
 import { Play } from 'lucide-react';
+import { getWatchProgress, getProgressPercentage } from '@/lib/watchProgress';
 
 interface EpisodeCardProps {
   episode: Episode;
@@ -12,6 +13,9 @@ interface EpisodeCardProps {
 }
 
 export default function EpisodeCard({ episode, thumbnail, summary }: EpisodeCardProps) {
+  const progress = getWatchProgress(episode.id);
+  const percentage = getProgressPercentage(progress);
+
   return (
     <Link 
       href={`/watch/${episode.id}`}
@@ -31,6 +35,23 @@ export default function EpisodeCard({ episode, thumbnail, summary }: EpisodeCard
             unoptimized={thumbnail.startsWith('http')}
           />
           
+          {/* Progress Bar Overlay */}
+          {percentage > 0 && percentage < 95 && (
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20 z-20">
+              <div 
+                className="h-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)]" 
+                style={{ width: `${percentage}%` }}
+              />
+            </div>
+          )}
+          
+          {/* Completed Badge */}
+          {percentage >= 95 && (
+            <div className="absolute inset-0 bg-black/40 flex items-center justify-center z-20">
+              <div className="bg-[var(--accent)]/90 text-white text-[10px] font-black px-2 py-1 rounded tracking-tighter">WATCHED</div>
+            </div>
+          )}
+
           {/* Gradient Overlay - Stronger on mobile for text readability */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent md:from-black/60 md:via-transparent" />
           
