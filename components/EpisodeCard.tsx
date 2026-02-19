@@ -18,7 +18,7 @@ export default function EpisodeCard({ episode, thumbnail, summary }: EpisodeCard
       className="group relative block transition-all duration-300 hover:z-50"
     >
       {/* Card Container - Expands on hover */}
-      <div className="relative bg-zinc-900 rounded-lg overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
+      <div className="relative bg-zinc-900 rounded-lg overflow-hidden shadow-lg portal-glow">
         
         {/* Thumbnail Section */}
         <div className="relative aspect-video overflow-hidden">

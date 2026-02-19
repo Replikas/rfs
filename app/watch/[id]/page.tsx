@@ -151,14 +151,14 @@ export default function WatchPage() {
         <div className="flex justify-end mb-1">
           <Link
             href={`/report/${id}`}
-            className="text-[10px] text-white/30 hover:text-white/60 transition-colors"
+            className="text-[10px] text-[var(--accent)] hover:text-white/60 transition-colors uppercase tracking-[0.2em] font-bold"
           >
-            Report issue
+            Report Anomaly
           </Link>
         </div>
 
         {/* Video Player */}
-        <div className="aspect-video bg-zinc-900 rounded-xl overflow-hidden mb-8 border border-white/10 relative shadow-2xl">
+        <div className="aspect-video bg-black rounded-xl overflow-hidden mb-8 border border-[var(--accent)]/30 relative portal-glow bg-zinc-900/50">
           <VideoPlayer
             src={finalVideoUrl}
             episodeId={id}

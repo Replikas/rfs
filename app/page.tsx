@@ -29,23 +29,23 @@ export default async function Home() {
       {/* Modern Header */}
       <div className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-black/40 border-b border-white/5">
         <div className="px-4 md:px-12 py-4 flex items-center justify-between">
-          <h1 className="text-2xl md:text-3xl font-black tracking-tighter">
-            <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-glow)] bg-clip-text text-transparent">
+          <h1 className="text-2xl md:text-3xl font-black tracking-tighter cursor-crosshair">
+            <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-glow)] bg-clip-text text-transparent glitch-hover">
               RickFlix
             </span>
           </h1>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-6">
             <Link 
               href="/groupwatch/1"
-              className="text-xs text-gray-500 hover:text-[var(--accent)] font-medium tracking-wider transition-colors"
+              className="text-[10px] text-[var(--accent-glow)] font-bold tracking-[0.2em] px-3 py-1 rounded-full border border-[var(--accent-glow)] hover:bg-[var(--accent-glow)] hover:text-black transition-all portal-glow"
             >
               GROUPWATCH
             </Link>
             <Link 
               href="/report/general"
-              className="text-xs text-gray-500 hover:text-[var(--accent)] font-medium tracking-wider transition-colors"
+              className="text-[10px] text-gray-500 hover:text-[var(--accent)] font-medium tracking-wider transition-colors"
             >
-              REPORT ISSUE
+              REPORT ANOMALY
             </Link>
           </div>
         </div>
