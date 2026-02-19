@@ -1,7 +1,7 @@
 // TMDB API for episode thumbnails
 // Get your free API key at: https://www.themoviedb.org/settings/api
 
-const TMDB_API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY || '';
+const TMDB_API_KEY = '02269a98332ab91c6579fa12ef995e5a';
 const TMDB_IMAGE_BASE = 'https://image.tmdb.org/t/p/w500';
 const RICK_AND_MORTY_TMDB_ID = '60625'; // Rick and Morty series ID on TMDB
 
