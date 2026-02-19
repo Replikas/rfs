@@ -9,14 +9,7 @@ import VideoPlayer from '@/components/VideoPlayer';
 
 // Generate video URL from Cloudflare R2
 function getVideoUrl(episodeId: string) {
-  // Episodes with cache-busting timestamps for fixes
-  // - 62-71 (Season 7): originally AV1/Opus, re-encoded Jan 12, 2026
-  // - 72-73: fixed on Dec 7, 2025
-  const id = parseInt(episodeId);
-  const timestamp = (id >= 62 && id <= 71) ? '20260112'
-    : (episodeId === '72' || episodeId === '73') ? '20251207'
-    : '3';
-  return `https://pub-31bfa27fce4142d7895e90af0a51d430.r2.dev/videos/episode-${episodeId}.mp4?v=${timestamp}`;
+  return `https://pub-31bfa27fce4142d7895e90af0a51d430.r2.dev/videos/episode-${episodeId}.mp4`;
 }
 
 export default function WatchPage() {
