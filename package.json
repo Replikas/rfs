@@ -19,7 +19,7 @@
     "hls.js": "^1.6.15",
     "lucide-react": "^0.554.0",
     "megajs": "^1.3.9",
-    "next": "16.0.3",
+    "next": "^16.1.6",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "tailwind-merge": "^3.4.0",

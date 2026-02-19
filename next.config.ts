@@ -10,6 +10,11 @@ const nextConfig: NextConfig = {
         hostname: 'image.tmdb.org',
         pathname: '/t/p/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'gained-ranch-dogs-unity.trycloudflare.com',
+        pathname: '/**',
+      },
     ],
   },
 };

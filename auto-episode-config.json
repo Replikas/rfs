@@ -1,0 +1,63 @@
+{
+  "torrentSites": {
+    "primary": {
+      "name": "EZTV",
+      "searchUrl": "https://eztv1.xyz/search/rick-and-morty",
+      "enabled": true,
+      "note": "EZTV changes domains frequently - use eztv-monitor.js to find active domain"
+    }
+  },
+  "qualityChecks": {
+    "videoCodec": {
+      "preferred": ["h264", "avc"],
+      "acceptable": ["hevc", "h265"],
+      "reject": ["vp8", "vp9"]
+    },
+    "audioCodec": {
+      "preferred": ["aac"],
+      "acceptable": ["mp3"],
+      "reject": ["ac3", "dts"]
+    },
+    "resolution": {
+      "minimum": "720p",
+      "preferred": "1080p",
+      "reject": ["480p", "360p"]
+    },
+    "fileSize": {
+      "minimum_mb": 200,
+      "maximum_mb": 2000,
+      "preferred_range": [400, 800]
+    },
+    "sources": {
+      "preferred": ["WEB-DL", "WEBRip", "HDTV"],
+      "acceptable": ["BluRay"],
+      "reject": ["CAM", "TS", "TC"]
+    }
+  },
+  "automation": {
+    "autoDownload": false,
+    "requireManualApproval": true,
+    "checkInterval_minutes": 30,
+    "maxConcurrentDownloads": 2
+  },
+  "notifications": {
+    "enabled": true,
+    "notifyOnNewEpisode": true,
+    "notifyOnQualityIssue": true,
+    "notifyOnUploadComplete": true
+  },
+  "storage": {
+    "downloadPath": "/home/openclaw/.openclaw/workspace/rickortystream-repo/downloads",
+    "processedPath": "/home/openclaw/.openclaw/workspace/rickortystream-repo/downloads/processed",
+    "failedPath": "/home/openclaw/.openclaw/workspace/rickortystream-repo/downloads/failed"
+  },
+  "showInfo": {
+    "name": "Rick and Morty",
+    "searchTerms": ["rick and morty", "rick.and.morty"],
+    "currentSeason": 8,
+    "lastEpisodeId": 81,
+    "nextSeason": 9,
+    "nextSeasonYear": 2026,
+    "monitorForNewSeason": true
+  }
+}

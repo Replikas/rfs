@@ -34,7 +34,11 @@ export default function WatchPage() {
   const [duration, setDuration] = useState(0);
   const [audioError, setAudioError] = useState(false);
 
-  const videoUrl = getVideoUrl(id);
+  // Use dynamic URL if provided, otherwise fallback to R2
+  const finalVideoUrl = (episode && episode.url && (episode.url.includes('.mp4') || episode.url.includes('.m3u8'))) 
+    ? episode.url 
+    : getVideoUrl(id);
+
   const nextEpisodeId = parseInt(id) < 81 ? parseInt(id) + 1 : null;
 
   // Reset video loading when episode changes
@@ -163,7 +167,7 @@ export default function WatchPage() {
         {/* Video Player */}
         <div className="aspect-video bg-zinc-900 rounded-xl overflow-hidden mb-8 border border-white/10 relative shadow-2xl">
           <VideoPlayer
-            src={videoUrl}
+            src={finalVideoUrl}
             episodeId={id}
             autoPlay={true}
             onEnded={handleVideoEnd}

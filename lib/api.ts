@@ -31,8 +31,22 @@ export async function getAllEpisodes(): Promise<Episode[]> {
     nextUrl = data.info.next;
   }
 
-  // Merge with additional episodes (Seasons 6-8)
-  return [...allEpisodes, ...additionalEpisodes];
+  // Fetch dynamically snatched episodes from C-137 HQ
+  let dynamicEpisodes: Episode[] = [];
+  try {
+    const res = await fetch('https://gained-ranch-dogs-unity.trycloudflare.com/api/episodes.json', { cache: 'no-store' });
+    if (res.ok) {
+      dynamicEpisodes = await res.json();
+    }
+  } catch (e) {
+    console.error('Failed to fetch dynamic episodes from C-137 HQ');
+  }
+
+  // Merge and deduplicate by ID
+  const combined = [...allEpisodes, ...additionalEpisodes, ...dynamicEpisodes];
+  const unique = Array.from(new Map(combined.map(item => [item.id, item])).values());
+  
+  return unique;
 }
 
 export function groupEpisodesBySeason(episodes: Episode[]) {
@@ -52,6 +66,16 @@ export async function getEpisodeById(id: string): Promise<Episode> {
   if (additionalEpisode) {
     return additionalEpisode;
   }
+
+  // Check dynamic episodes from C-137 HQ
+  try {
+    const res = await fetch('https://gained-ranch-dogs-unity.trycloudflare.com/api/episodes.json', { cache: 'no-store' });
+    if (res.ok) {
+      const dynamicEpisodes: Episode[] = await res.json();
+      const dynamicEp = dynamicEpisodes.find(ep => ep.id === parseInt(id));
+      if (dynamicEp) return dynamicEp;
+    }
+  } catch (e) {}
   
   // Otherwise fetch from API (seasons 1-5)
   const res = await fetch(`https://rickandmortyapi.com/api/episode/${id}`);
