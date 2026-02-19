@@ -98,10 +98,10 @@ export default function VideoPlayer({
     const video = videoRef.current;
     if (!video) return;
 
-    // Disable subtitles by default
+    // Respect enableSubtitles or disable by default
     if (video.textTracks && video.textTracks.length > 0) {
       for (let i = 0; i < video.textTracks.length; i++) {
-        video.textTracks[i].mode = 'disabled';
+        video.textTracks[i].mode = enableSubtitles ? 'showing' : 'disabled';
       }
     }
     
@@ -232,7 +232,7 @@ export default function VideoPlayer({
             src={subtitleUrl}
             srcLang="en"
             label="English"
-            default={false}
+            default={enableSubtitles}
             onError={(e) => {
               console.error('❌ Subtitle track failed to load:', e);
               console.error('Track element:', e.target);
