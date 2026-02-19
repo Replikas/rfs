@@ -36,12 +36,12 @@ export default function VideoPlayer({
   
   // Sync enableSubtitles prop with state
   useEffect(() => {
-    if (enableSubtitles !== subtitlesEnabled) {
-      setSubtitlesEnabled(enableSubtitles);
+    // Force subtitles ON if they should be enabled
+    if (enableSubtitles) {
+      setSubtitlesEnabled(true);
       const video = videoRef.current;
       if (video && video.textTracks && video.textTracks.length > 0) {
-        video.textTracks[0].mode = enableSubtitles ? 'showing' : 'disabled';
-        console.log(`Subtitles ${enableSubtitles ? 'enabled' : 'disabled'} from prop`);
+        video.textTracks[0].mode = 'showing';
       }
     }
   }, [enableSubtitles]);
@@ -52,16 +52,16 @@ export default function VideoPlayer({
       console.log('Subtitle URL:', subtitleUrl);
       
       // Test if subtitle file exists
-      fetch(subtitleUrl, { method: 'HEAD' })
+      fetch(subtitleUrl, { method: 'HEAD', mode: 'cors' })
         .then(response => {
           if (response.ok) {
-            console.log('✅ Subtitle file exists');
+            console.log('✅ Subtitle file exists and is accessible via CORS');
           } else {
-            console.log('❌ Subtitle file not found (404)');
+            console.log(`❌ Subtitle file not found or inaccessible (Status: ${response.status})`);
           }
         })
         .catch(error => {
-          console.error('❌ Error checking subtitle file:', error);
+          console.error('❌ Error checking subtitle file (CORS issue?):', error);
         });
     }
   }, [subtitleUrl]);
