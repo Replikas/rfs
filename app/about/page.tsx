@@ -80,10 +80,20 @@ export default function AboutPage() {
         </div>
 
         {/* Footer */}
-        <div className="mt-12 pt-8 border-t border-white/5 text-center">
-          <p className="text-xs text-gray-600">
-            Created by <span className="text-[var(--accent)]">rep</span> © 2025
-          </p>
+        <div className="mt-12 pt-8 border-t border-white/5">
+          <div className="flex items-center justify-between">
+            <p className="text-xs text-gray-600">
+              Created by <span className="text-[var(--accent)]">rep</span> © 2025
+            </p>
+            <Link 
+              href="https://ko-fi.com/replika"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-gray-600 hover:text-[var(--accent)] transition-colors"
+            >
+              Ko-fi
+            </Link>
+          </div>
         </div>
       </div>
     </div>

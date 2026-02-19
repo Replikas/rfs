@@ -12,7 +12,6 @@ interface EpisodeCardProps {
 }
 
 export default function EpisodeCard({ episode, thumbnail, summary }: EpisodeCardProps) {
-  
   return (
     <Link 
       href={`/watch/${episode.id}`}

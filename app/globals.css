@@ -67,10 +67,73 @@ body {
   animation: pulse-slower 12s ease-in-out infinite;
 }
 
+/* Floating animation for hero image */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Marquee scrolling animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-marquee {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}
+
+/* Fade in animation for skip button */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out;
+}
+
 /* Video.js Custom Styling */
 .video-js {
   width: 100%;
   height: 100%;
+}
+
+/* Force subtitle rendering */
+video::cue {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 1.2em;
+  font-family: Arial, sans-serif;
+}
+
+video::-webkit-media-text-track-container {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+video::-webkit-media-text-track-display {
+  position: relative !important;
+  z-index: 1 !important;
 }
 
 .video-js .vjs-big-play-button {

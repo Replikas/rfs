@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import MaintenancePage from "./components/MaintenancePage";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,6 +18,9 @@ export const metadata: Metadata = {
   description: "Watch all 81 episodes of Rick and Morty across 8 seasons. Wubba Lubba Dub Dub!",
 };
 
+// Hardcoded maintenance mode - change to false when ready
+const isMaintenanceMode = false; // process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'true';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,7 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        {isMaintenanceMode ? <MaintenancePage /> : children}
       </body>
     </html>
   );
