@@ -7,11 +7,7 @@ import { ArrowLeft, Users, Copy, Check, Send, Edit2 } from 'lucide-react';
 import { Episode } from '@/lib/api';
 import Pusher from 'pusher-js';
 import VideoPlayer from '@/components/VideoPlayer';
-
-// Generate video URL from Cloudflare R2
-function getVideoUrl(episodeId: string) {
-  return `https://pub-31bfa27fce4142d7895e90af0a51d430.r2.dev/videos/episode-${episodeId}.mp4`;
-}
+import { getVideoUrl } from '@/lib/videoSources';
 
 // Generate a unique room ID
 function generateRoomId(): string {

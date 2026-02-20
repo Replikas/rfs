@@ -1,4 +1,5 @@
 import { additionalEpisodes } from './additionalEpisodes';
+import peertubeMappings from './peertube_mappings.json';
 
 export interface Episode {
   id: number;

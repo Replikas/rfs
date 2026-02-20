@@ -6,11 +6,7 @@ import Link from 'next/link';
 import { ArrowLeft, SkipForward } from 'lucide-react';
 import { Episode } from '@/lib/api';
 import VideoPlayer from '@/components/VideoPlayer';
-
-// Generate video URL from Cloudflare R2
-function getVideoUrl(episodeId: string) {
-  return `https://pub-31bfa27fce4142d7895e90af0a51d430.r2.dev/videos/episode-${episodeId}.mp4`;
-}
+import { getVideoUrl } from '@/lib/videoSources';
 
 export default function WatchPage() {
   const params = useParams();
