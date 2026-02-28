@@ -65,7 +65,7 @@ export default function HeroSection({ featuredEpisodes, summaries }: HeroSection
       {/* Background Image with Ken Burns Effect */}
       <div className={`absolute inset-0 transition-all duration-1000 ${isExiting ? 'opacity-0 scale-110' : 'opacity-100'}`}>
         <div 
-          className="absolute inset-0 bg-contain bg-top bg-no-repeat md:bg-cover md:bg-center animate-ken-burns transition-opacity duration-1000"
+          className="absolute inset-0 bg-cover bg-top md:bg-center animate-ken-burns transition-opacity duration-1000"
           style={{ backgroundImage: `url(${backdrop})` }}
         />
         
