@@ -73,13 +73,6 @@ export default function HeroSection({ featuredEpisodes, summaries }: HeroSection
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent z-10" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent z-10" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent z-10 opacity-60" />
-        
-        {/* Subtle Portal Dust / Science Particles */}
-        <div className="absolute inset-0 z-10 pointer-events-none opacity-20">
-          <div className="absolute top-[20%] left-[15%] w-2 h-2 bg-[var(--accent)] rounded-full blur-[1px] animate-particle" />
-          <div className="absolute top-[60%] left-[80%] w-3 h-3 bg-[var(--accent-glow)] rounded-full blur-[2px] animate-particle" style={{ animationDelay: '-5s' }} />
-          <div className="absolute top-[40%] left-[40%] w-1.5 h-1.5 bg-white rounded-full blur-[1px] animate-particle" style={{ animationDelay: '-10s' }} />
-        </div>
       </div>
 
       {/* Content Overlay */}
