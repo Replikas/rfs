@@ -29,8 +29,6 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen bg-black relative overflow-hidden">
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[var(--accent-glow)] rounded-full blur-[150px] animate-pulse-slower"></div>
-      </div>
       
       {/* Modern Header */}
       <div className="fixed top-0 left-0 right-0 z-[100] transition-colors duration-500 bg-black/40 backdrop-blur-md border-b border-white/5">
