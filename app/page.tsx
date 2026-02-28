@@ -73,16 +73,16 @@ export default async function Home() {
         />
       </div>
 
-      <footer className="relative px-4 md:px-12 py-12 border-t border-white/5 backdrop-blur-sm">
-        <div className="max-w-4xl mx-auto flex items-center justify-between">
-          <div className="text-xs text-gray-600 font-medium">
+      <footer className="relative px-4 md:px-12 py-8 border-t border-white/10">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="text-xs text-gray-500 font-medium">
             Created by <span className="text-[var(--accent)]">rep</span> © 2025
           </div>
-          <div className="flex items-center gap-4">
-            <a href="/about" className="text-xs text-gray-600 hover:text-[var(--accent)] transition-colors">About & Legal</a>
-            <a href="https://ko-fi.com/replika" target="_blank" rel="noopener noreferrer" className="text-xs text-gray-600 hover:text-[var(--accent)] transition-colors">Ko-fi</a>
-            <div className="text-xs text-gray-700 tracking-wider">RICKFLIX™ v2.1-UIFIX</div>
+          <div className="flex items-center gap-6">
+            <a href="/about" className="text-xs text-gray-500 hover:text-white transition-colors">About & Legal</a>
+            <a href="https://ko-fi.com/replika" target="_blank" rel="noopener noreferrer" className="text-xs text-gray-500 hover:text-white transition-colors">Ko-fi</a>
           </div>
+          <div className="text-[10px] text-gray-700 tracking-widest">RICKFLIX™</div>
         </div>
       </footer>
     </main>
