@@ -1,7 +1,7 @@
 'use client';
 
 import { Episode } from '@/lib/api';
-import { Play, Info, ChevronLeft, ChevronRight, Zap } from 'lucide-react';
+import { Play, Info, Zap } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect, useCallback } from 'react';
 
@@ -129,22 +129,6 @@ export default function HeroSection({ featuredEpisodes, summaries }: HeroSection
             </Link>
           </div>
         </div>
-      </div>
-
-      {/* Modern Navigation Arrows */}
-      <div className="hidden md:flex absolute bottom-12 right-16 z-30 gap-6">
-        <button 
-          onClick={handlePrev}
-          className="p-4 rounded-full border border-white/10 bg-black/20 hover:bg-[var(--accent)] hover:border-[var(--accent)] hover:text-white transition-all text-white/60 backdrop-blur-xl active:scale-90"
-        >
-          <ChevronLeft className="w-8 h-8" />
-        </button>
-        <button 
-          onClick={handleNext}
-          className="p-4 rounded-full border border-white/10 bg-black/20 hover:bg-[var(--accent)] hover:border-[var(--accent)] hover:text-white transition-all text-white/60 backdrop-blur-xl active:scale-90"
-        >
-          <ChevronRight className="w-8 h-8" />
-        </button>
       </div>
 
       {/* Index Indicators */}
