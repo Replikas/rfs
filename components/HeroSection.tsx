@@ -89,7 +89,7 @@ export default function HeroSection({ featuredEpisodes, summaries }: HeroSection
 
           {/* Aggressive Cinematic Title */}
           <div className="overflow-visible mb-4 md:mb-6 w-full group max-w-3xl">
-            <h1 className="text-[clamp(1.8rem,8vw,3rem)] md:text-[clamp(3rem,5vw,5rem)] font-black text-white tracking-tighter leading-[1.05] italic uppercase drop-shadow-[0_15px_45px_rgba(0,0,0,0.9)] py-1 select-none glitch-hover transition-transform duration-300 group-hover:scale-[1.01]">
+            <h1 className="text-[clamp(1.8rem,8vw,3rem)] md:text-[clamp(3rem,5vw,5rem)] font-black text-white tracking-tighter leading-[1.05] italic uppercase drop-shadow-[0_15px_45px_rgba(0,0,0,0.9)] py-1 select-none transition-transform duration-300">
               {currentEpisode.name}
             </h1>
           </div>

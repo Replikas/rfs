@@ -22,7 +22,7 @@ export default function EpisodeCard({ episode, thumbnail, summary }: EpisodeCard
       className="group relative block transition-all duration-300 hover:z-50"
     >
       {/* Card Container - Expands on hover */}
-      <div className="relative bg-zinc-900 rounded-lg overflow-hidden shadow-lg portal-glow">
+      <div className="relative bg-zinc-900 rounded-lg overflow-hidden shadow-lg">
         
         {/* Thumbnail Section */}
         <div className="relative aspect-video overflow-hidden">
@@ -39,7 +39,7 @@ export default function EpisodeCard({ episode, thumbnail, summary }: EpisodeCard
           {percentage > 0 && percentage < 95 && (
             <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20 z-20">
               <div 
-                className="h-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)]" 
+                className="h-full bg-[var(--accent)]" 
                 style={{ width: `${percentage}%` }}
               />
             </div>

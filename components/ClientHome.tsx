@@ -78,7 +78,7 @@ export default function ClientHome({ initialEpisodes, thumbnails, summaries }: C
             <div className="flex gap-4">
               {recentlyWatched.map((ep) => (
                 <div key={ep.id} className="flex-none w-[240px] md:w-[280px]">
-                  <Link href={`/watch/${ep.id}`} className="group block relative rounded-lg overflow-hidden border border-white/5 hover:border-[var(--accent)]/50 transition-all shadow-lg portal-glow">
+                  <Link href={`/watch/${ep.id}`} className="group block relative rounded-lg overflow-hidden border border-white/5 hover:border-[var(--accent)]/50 transition-all shadow-lg">
                     <div className="aspect-video relative">
                       <img 
                         src={thumbnails[ep.id]} 
