@@ -24,8 +24,8 @@ export const metadata: Metadata = {
     title: "RickFlix",
   },
   icons: {
-    icon: "/v7-nuclear/portal-master-512.png?v=1772262145",
-    apple: "/v7-nuclear/ios-portal-180.png?v=1772262145",
+    icon: "/rf-icon/rf-512.png",
+    apple: "/rf-icon/rf-180.png",
   },
 };
 
@@ -40,9 +40,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=1772262145" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=1772262510" />
         <link rel="manifest" href="/nuclear.webmanifest?v=1772262145" />
-        <link rel="apple-touch-icon" href="/v7-nuclear/ios-portal-180.png?v=1772262145" />
+        <link rel="apple-touch-icon" href="/rf-icon/rf-180.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
