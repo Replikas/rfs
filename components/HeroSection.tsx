@@ -148,7 +148,7 @@ export default function HeroSection({ featuredEpisodes, summaries }: HeroSection
       </div>
 
       {/* Index Indicators */}
-      <div className="absolute bottom-4 md:bottom-12 left-1/2 -translate-x-1/2 z-30 flex gap-2 md:gap-3">
+      <div className="absolute bottom-[4.5rem] md:bottom-12 left-1/2 -translate-x-1/2 z-30 flex gap-2 md:gap-3">
         {featuredEpisodes.map((_, i) => (
           <button
             key={i}
