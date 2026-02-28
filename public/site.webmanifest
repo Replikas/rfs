@@ -1,21 +1,21 @@
 {
   "name": "RickFlix",
   "short_name": "RickFlix",
-  "description": "Stream All Rick and Morty Episodes",
+  "description": "Stream Rick and Morty",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0a0a",
   "theme_color": "#00b5cc",
   "icons": [
     {
-      "src": "/icon.svg",
-      "sizes": "any",
+      "src": "/branding/app-icon.svg?v=1",
+      "sizes": "192x192 512x512",
       "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "/icon.svg",
-      "sizes": "any",
+      "src": "/branding/app-icon.svg?v=1",
+      "sizes": "192x192 512x512",
       "type": "image/svg+xml",
       "purpose": "maskable"
     }
