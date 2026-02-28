@@ -61,11 +61,11 @@ export default function HeroSection({ featuredEpisodes, summaries }: HeroSection
   };
 
   return (
-    <div className="relative h-[65vh] md:h-[95vh] w-full overflow-hidden bg-black pt-[70px] md:pt-[80px]">
+    <div className="relative h-[45vh] md:h-[95vh] w-full overflow-hidden bg-black pt-[70px] md:pt-[80px]">
       {/* Background Image with Ken Burns Effect */}
       <div className={`absolute inset-0 transition-all duration-1000 ${isExiting ? 'opacity-0 scale-110' : 'opacity-100'}`}>
         <div 
-          className="absolute inset-0 bg-cover bg-center animate-ken-burns transition-opacity duration-1000"
+          className="absolute inset-0 bg-cover bg-top md:bg-center animate-ken-burns transition-opacity duration-1000"
           style={{ backgroundImage: `url(${backdrop})` }}
         />
         
