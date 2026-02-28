@@ -70,9 +70,9 @@ export default function HeroSection({ featuredEpisodes, summaries }: HeroSection
         />
         
         {/* Cinematic Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent z-10 hidden md:block" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent z-10 opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent z-10 opacity-60" />
         
         {/* Subtle Portal Dust / Science Particles */}
         <div className="absolute inset-0 z-10 pointer-events-none opacity-20">
