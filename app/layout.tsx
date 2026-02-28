@@ -17,12 +17,15 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "RickFlix - Stream All Rick and Morty Episodes",
   description: "Watch all 81 episodes of Rick and Morty across 8 seasons.",
-  manifest: "/fresh.webmanifest",
+  manifest: "/ultimate.webmanifest",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "RickFlix",
+  },
   icons: {
-    icon: [
-      { url: "/v2/favicon.svg", type: "image/svg+xml" },
-    ],
-    apple: "/v2/launcher.svg",
+    icon: "/final-v3/icon-512.png",
+    apple: "/final-v3/apple-touch-icon.png",
   },
 };
 
@@ -37,8 +40,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" type="image/svg+xml" href="/v2/favicon.svg" />
-        <link rel="apple-touch-icon" href="/v2/launcher.svg" />
+        <link rel="manifest" href="/ultimate.webmanifest" />
+        <link rel="apple-touch-icon" href="/final-v3/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
