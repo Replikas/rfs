@@ -38,8 +38,8 @@ export default function ClientHome({ initialEpisodes, thumbnails, summaries }: C
 
   return (
     <div className="pb-12 relative z-10">
-      {/* Search Bar Container - FIXED to float above EVERYTHING */}
-      <div className="md:fixed md:top-20 md:right-12 z-[999] px-4 md:px-0 mt-8 md:mt-0 mb-8 md:mb-0 w-full md:w-auto">
+      {/* Search Bar Container - ABSOLUTELY FIXED AT TOP FOR ALL SIZES */}
+      <div className="fixed top-6 right-6 md:top-24 md:right-16 z-[99999] w-[calc(100%-3rem)] md:w-auto">
         <div className="w-full md:max-w-sm relative group">
           <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
             <Search className="w-4 h-4 text-gray-400 group-focus-within:text-[var(--accent)] transition-colors" />
@@ -49,7 +49,7 @@ export default function ClientHome({ initialEpisodes, thumbnails, summaries }: C
             placeholder="Search for an episode..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-black/90 backdrop-blur-3xl border border-white/20 rounded-full py-4 md:py-3 pl-12 pr-12 text-base md:text-sm text-white focus:outline-none focus:border-[var(--accent)] focus:ring-4 focus:ring-[var(--accent)]/10 transition-all placeholder-gray-500 shadow-[0_0_50px_rgba(0,0,0,0.8)]"
+            className="w-full bg-black/95 backdrop-blur-3xl border border-white/30 rounded-full py-4 md:py-3 pl-12 pr-12 text-base md:text-sm text-white focus:outline-none focus:border-[var(--accent)] transition-all placeholder-gray-400 shadow-[0_0_80px_rgba(0,0,0,1)] ring-2 ring-white/5"
           />
           {searchQuery && (
             <button 
