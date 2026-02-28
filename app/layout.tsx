@@ -43,6 +43,14 @@ export default function RootLayout({
         <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=1772262510" />
         <link rel="manifest" href="/nuclear.webmanifest?v=1772262145" />
         <link rel="apple-touch-icon" href="/rf-icon/rf-180.png" />
+              <script dangerouslySetInnerHTML={{__html: `
+          if ('caches' in window) {
+            caches.keys().then(names => names.forEach(name => caches.delete(name)));
+          }
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister()));
+          }
+        `}} />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
