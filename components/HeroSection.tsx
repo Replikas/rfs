@@ -61,7 +61,7 @@ export default function HeroSection({ featuredEpisodes, summaries }: HeroSection
   };
 
   return (
-    <div className="relative h-[45vh] md:h-[95vh] w-full overflow-hidden bg-black pt-[70px] md:pt-[80px]">
+    <div className="relative h-[55vh] md:h-[95vh] w-full overflow-hidden bg-black pt-[70px] md:pt-[80px]">
       {/* Background Image with Ken Burns Effect */}
       <div className={`absolute inset-0 transition-all duration-1000 ${isExiting ? 'opacity-0 scale-110' : 'opacity-100'}`}>
         <div 
@@ -83,9 +83,9 @@ export default function HeroSection({ featuredEpisodes, summaries }: HeroSection
       </div>
 
       {/* Content Overlay */}
-      <div className={`relative z-20 h-full flex flex-col justify-center md:justify-end px-6 md:px-16 pb-12 md:pb-32 transition-all duration-700 ${isExiting ? 'translate-y-10 opacity-0' : 'translate-y-0 opacity-100'}`}>
+      <div className={`relative z-20 h-full flex flex-col justify-center md:justify-end px-6 md:px-16 pb-20 md:pb-32 transition-all duration-700 ${isExiting ? 'translate-y-10 opacity-0' : 'translate-y-0 opacity-100'}`}>
         
-        <div className="flex flex-col items-center md:items-start text-center md:text-left max-w-md md:max-w-4xl mx-auto md:mx-0 w-full mb-8 md:mb-0 pt-20 md:pt-0">
+        <div className="flex flex-col items-center md:items-start text-center md:text-left max-w-md md:max-w-4xl mx-auto md:mx-0 w-full mb-0 pt-0">
           {/* Animated Episode Tag */}
           <div className="flex items-center gap-2 mb-2 animate-fade-in">
             <span className="flex items-center gap-1.2 bg-black/40 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-white/10 text-white/90 text-[9px] md:text-xs font-black tracking-[0.2em] uppercase">
@@ -148,7 +148,7 @@ export default function HeroSection({ featuredEpisodes, summaries }: HeroSection
       </div>
 
       {/* Index Indicators */}
-      <div className="absolute bottom-14 md:bottom-12 left-1/2 -translate-x-1/2 z-30 flex gap-2 md:gap-3">
+      <div className="absolute bottom-4 md:bottom-12 left-1/2 -translate-x-1/2 z-30 flex gap-2 md:gap-3">
         {featuredEpisodes.map((_, i) => (
           <button
             key={i}
