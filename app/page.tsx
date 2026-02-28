@@ -70,7 +70,7 @@ export default async function Home() {
       {/* Hero Section */}
       <HeroSection featuredEpisodes={featuredEpisodes} summaries={summaries} />
 
-      <div className="md:-mt-32 relative z-10">
+      <div className="relative z-10">
         <ClientHome 
           initialEpisodes={episodes} 
           thumbnails={thumbnails} 
