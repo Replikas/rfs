@@ -1,20 +1,20 @@
 {
   "name": "RickFlix",
   "short_name": "RickFlix",
-  "description": "Stream Rick and Morty",
-  "start_url": "/",
+  "description": "Infinite Rick and Morty",
+  "start_url": "/?installed=true",
   "display": "standalone",
-  "background_color": "#0a0a0a",
+  "background_color": "#000000",
   "theme_color": "#00b5cc",
   "icons": [
     {
-      "src": "/branding/app-icon.svg?v=1",
+      "src": "/v2/launcher.svg",
       "sizes": "192x192 512x512",
       "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "/branding/app-icon.svg?v=1",
+      "src": "/v2/launcher.svg",
       "sizes": "192x192 512x512",
       "type": "image/svg+xml",
       "purpose": "maskable"
