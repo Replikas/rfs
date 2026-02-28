@@ -39,7 +39,7 @@ export default function ClientHome({ initialEpisodes, thumbnails, summaries }: C
   return (
     <div className="pb-12 relative z-10">
       {/* Search Bar Container - ABSOLUTELY FIXED AT TOP FOR ALL SIZES */}
-      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 md:translate-x-0 md:bottom-auto md:left-auto md:top-24 md:right-16 z-[99999] w-[calc(100%-3rem)] md:w-auto">
+      <div className="relative mx-4 -mt-6 mb-8 md:fixed md:mx-0 md:mt-0 md:mb-0 md:top-24 md:right-16 z-[99999] md:w-auto">
         <div className="w-full md:max-w-sm relative group">
           <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
             <Search className="w-4 h-4 text-gray-400 group-focus-within:text-[var(--accent)] transition-colors" />
