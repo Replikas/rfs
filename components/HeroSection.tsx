@@ -15,6 +15,7 @@ export default function HeroSection({ featuredEpisodes, summaries }: HeroSection
   const [backdrop, setBackdrop] = useState<string>('');
   const [isPlaceholder, setIsPlaceholder] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
 
   const currentEpisode = featuredEpisodes[currentIndex];
   const currentSummary = summaries[currentEpisode.id];
@@ -49,6 +50,7 @@ export default function HeroSection({ featuredEpisodes, summaries }: HeroSection
     setTimeout(() => {
       setCurrentIndex((prev) => (prev + 1) % featuredEpisodes.length);
       setIsExiting(false);
+      setShowInfo(false);
     }, 500);
   };
 
@@ -57,6 +59,7 @@ export default function HeroSection({ featuredEpisodes, summaries }: HeroSection
     setTimeout(() => {
       setCurrentIndex((prev) => (prev - 1 + featuredEpisodes.length) % featuredEpisodes.length);
       setIsExiting(false);
+      setShowInfo(false);
     }, 500);
   };
 
@@ -121,6 +124,19 @@ export default function HeroSection({ featuredEpisodes, summaries }: HeroSection
               <span className="hidden md:inline">MORE INFO</span>
             </Link>
           </div>
+
+          {/* Episode Info Panel */}
+          {showInfo && (
+            <div className="mt-4 w-full max-w-2xl bg-black/80 backdrop-blur-md rounded-lg border border-white/10 p-4 md:p-6 animate-fade-in">
+              <p className="text-sm md:text-base text-gray-200 leading-relaxed">
+                {currentSummary || "No summary available for this episode."}
+              </p>
+              <div className="mt-3 flex items-center gap-4 text-xs text-gray-400">
+                <span>{currentEpisode.episode}</span>
+                {currentEpisode.air_date && <span>Aired: {currentEpisode.air_date}</span>}
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
