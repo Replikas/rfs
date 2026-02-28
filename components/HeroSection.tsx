@@ -115,14 +115,14 @@ export default function HeroSection({ featuredEpisodes, summaries }: HeroSection
               <Play className="fill-current w-4 h-4 md:w-6 md:h-6 group-hover:scale-110 transition-transform" />
               PLAY
             </Link>
-            <Link 
-              href={`/watch/${currentEpisode.id}`}
+            <button 
+              onClick={() => setShowInfo(!showInfo)}
               className="flex-1 md:flex-none flex items-center justify-center gap-3 bg-gray-500/20 backdrop-blur-xl text-white px-6 md:px-12 py-2.5 md:py-4 rounded-md font-bold text-sm md:text-xl transition-all hover:bg-gray-500/40 active:scale-95 border border-white/10 group shadow-xl"
             >
               <Info className="w-4 h-4 md:w-6 md:h-6 group-hover:rotate-12 transition-transform" />
               <span className="md:hidden">INFO</span>
               <span className="hidden md:inline">MORE INFO</span>
-            </Link>
+            </button>
           </div>
 
           {/* Episode Info Panel */}
