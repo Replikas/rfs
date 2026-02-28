@@ -1,0 +1,23 @@
+{
+  "name": "RickFlix",
+  "short_name": "RickFlix",
+  "description": "Stream All Rick and Morty Episodes",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#00b5cc",
+  "icons": [
+    {
+      "src": "/rick-portal.png?v=2",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/rick-portal.png?v=2",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,569 @@
+[
+  {
+    "episodeNum": 1,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 2,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 3,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 4,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 5,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 6,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 7,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 8,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 9,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 10,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 11,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 12,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 13,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 14,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 2,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 15,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 16,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 17,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 18,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 19,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 20,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 21,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 22,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 23,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 24,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 25,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 26,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 27,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 28,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 29,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 30,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 31,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 32,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 2,
+    "sampleRate": "44100"
+  },
+  {
+    "episodeNum": 33,
+    "hasAudio": true,
+    "codec": "ac3",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 34,
+    "hasAudio": true,
+    "codec": "ac3",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 35,
+    "hasAudio": true,
+    "codec": "ac3",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 36,
+    "hasAudio": true,
+    "codec": "ac3",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 37,
+    "hasAudio": true,
+    "codec": "eac3",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 38,
+    "hasAudio": true,
+    "codec": "ac3",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 39,
+    "hasAudio": true,
+    "codec": "ac3",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 40,
+    "hasAudio": true,
+    "codec": "ac3",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 41,
+    "hasAudio": true,
+    "codec": "eac3",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 42,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 2,
+    "sampleRate": "44100"
+  },
+  {
+    "episodeNum": 43,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 2,
+    "sampleRate": "44100"
+  },
+  {
+    "episodeNum": 44,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 2,
+    "sampleRate": "44100"
+  },
+  {
+    "episodeNum": 45,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 2,
+    "sampleRate": "44100"
+  },
+  {
+    "episodeNum": 46,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 2,
+    "sampleRate": "44100"
+  },
+  {
+    "episodeNum": 47,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 2,
+    "sampleRate": "44100"
+  },
+  {
+    "episodeNum": 48,
+    "hasAudio": true,
+    "codec": "eac3",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 49,
+    "hasAudio": true,
+    "codec": "eac3",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 50,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 2,
+    "sampleRate": "44100"
+  },
+  {
+    "episodeNum": 51,
+    "hasAudio": true,
+    "codec": "ac3",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 52,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 2,
+    "sampleRate": "44100"
+  },
+  {
+    "episodeNum": 53,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 2,
+    "sampleRate": "44100"
+  },
+  {
+    "episodeNum": 54,
+    "hasAudio": true,
+    "codec": "ac3",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 55,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 2,
+    "sampleRate": "44100"
+  },
+  {
+    "episodeNum": 56,
+    "hasAudio": true,
+    "codec": "ac3",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 57,
+    "hasAudio": true,
+    "codec": "ac3",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 58,
+    "hasAudio": true,
+    "codec": "ac3",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 59,
+    "hasAudio": true,
+    "codec": "ac3",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 60,
+    "hasAudio": true,
+    "codec": "ac3",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 61,
+    "hasAudio": true,
+    "codec": "ac3",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 62,
+    "hasAudio": true,
+    "codec": "opus",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 63,
+    "hasAudio": true,
+    "codec": "opus",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 64,
+    "hasAudio": true,
+    "codec": "opus",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 65,
+    "hasAudio": true,
+    "codec": "opus",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 66,
+    "hasAudio": true,
+    "codec": "opus",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 67,
+    "hasAudio": true,
+    "codec": "opus",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 68,
+    "hasAudio": true,
+    "codec": "opus",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 69,
+    "hasAudio": true,
+    "codec": "opus",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 70,
+    "hasAudio": true,
+    "codec": "opus",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 71,
+    "hasAudio": true,
+    "codec": "opus",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 72,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 73,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 74,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 75,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 76,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 77,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 78,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 79,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 80,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  },
+  {
+    "episodeNum": 81,
+    "hasAudio": true,
+    "codec": "aac",
+    "channels": 6,
+    "sampleRate": "48000"
+  }
+]

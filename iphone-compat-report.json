@@ -1,0 +1,1519 @@
+[
+  {
+    "episodeNum": 1,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.2 Mbps"
+    }
+  },
+  {
+    "episodeNum": 2,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.4 Mbps"
+    }
+  },
+  {
+    "episodeNum": 3,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.5 Mbps"
+    }
+  },
+  {
+    "episodeNum": 4,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.6 Mbps"
+    }
+  },
+  {
+    "episodeNum": 5,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.3 Mbps"
+    }
+  },
+  {
+    "episodeNum": 6,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.3 Mbps"
+    }
+  },
+  {
+    "episodeNum": 7,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.3 Mbps"
+    }
+  },
+  {
+    "episodeNum": 8,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.1 Mbps"
+    }
+  },
+  {
+    "episodeNum": 9,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.1 Mbps"
+    }
+  },
+  {
+    "episodeNum": 10,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.6 Mbps"
+    }
+  },
+  {
+    "episodeNum": 11,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.5 Mbps"
+    }
+  },
+  {
+    "episodeNum": 12,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1916x1076 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1916x1076",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.8 Mbps"
+    }
+  },
+  {
+    "episodeNum": 13,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1916x1076 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1916x1076",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.5 Mbps"
+    }
+  },
+  {
+    "episodeNum": 14,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.4 Mbps"
+    }
+  },
+  {
+    "episodeNum": 15,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.4 Mbps"
+    }
+  },
+  {
+    "episodeNum": 16,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1916x1076 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1916x1076",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.0 Mbps"
+    }
+  },
+  {
+    "episodeNum": 17,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1916x1076 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1916x1076",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.2 Mbps"
+    }
+  },
+  {
+    "episodeNum": 18,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1916x1076 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1916x1076",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.1 Mbps"
+    }
+  },
+  {
+    "episodeNum": 19,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1916x1076 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1916x1076",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.1 Mbps"
+    }
+  },
+  {
+    "episodeNum": 20,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "0.9 Mbps"
+    }
+  },
+  {
+    "episodeNum": 21,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.0 Mbps"
+    }
+  },
+  {
+    "episodeNum": 22,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main 10 (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)",
+      "Wrong pixel format: yuv420p10le (needs yuv420p)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main 10",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p10le",
+      "audioCodec": "aac",
+      "bitrate": "0.9 Mbps"
+    }
+  },
+  {
+    "episodeNum": 23,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.1 Mbps"
+    }
+  },
+  {
+    "episodeNum": 24,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "0.8 Mbps"
+    }
+  },
+  {
+    "episodeNum": 25,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.2 Mbps"
+    }
+  },
+  {
+    "episodeNum": 26,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.4 Mbps"
+    }
+  },
+  {
+    "episodeNum": 27,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.2 Mbps"
+    }
+  },
+  {
+    "episodeNum": 28,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.1 Mbps"
+    }
+  },
+  {
+    "episodeNum": 29,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.3 Mbps"
+    }
+  },
+  {
+    "episodeNum": 30,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.1 Mbps"
+    }
+  },
+  {
+    "episodeNum": 31,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.0 Mbps"
+    }
+  },
+  {
+    "episodeNum": 32,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)",
+      "Level too high: 4.1 (needs ≤3.1)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "4.1",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "2.1 Mbps"
+    }
+  },
+  {
+    "episodeNum": 33,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)",
+      "Level too high: 4.1 (needs ≤3.1)",
+      "Wrong audio: ac3 (needs aac)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "4.1",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p",
+      "audioCodec": "ac3",
+      "bitrate": "2.1 Mbps"
+    }
+  },
+  {
+    "episodeNum": 34,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)",
+      "Level too high: 4.1 (needs ≤3.1)",
+      "Wrong audio: ac3 (needs aac)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "4.1",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p",
+      "audioCodec": "ac3",
+      "bitrate": "2.2 Mbps"
+    }
+  },
+  {
+    "episodeNum": 35,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)",
+      "Level too high: 4.1 (needs ≤3.1)",
+      "Wrong audio: ac3 (needs aac)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "4.1",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p",
+      "audioCodec": "ac3",
+      "bitrate": "2.9 Mbps"
+    }
+  },
+  {
+    "episodeNum": 36,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)",
+      "Level too high: 4.1 (needs ≤3.1)",
+      "Wrong audio: ac3 (needs aac)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "4.1",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p",
+      "audioCodec": "ac3",
+      "bitrate": "2.3 Mbps"
+    }
+  },
+  {
+    "episodeNum": 37,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 4 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)",
+      "Wrong audio: eac3 (needs aac)",
+      "High bitrate: 5.7 Mbps (iPhone prefers <2.5 Mbps)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "Main",
+      "level": "4.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "eac3",
+      "bitrate": "5.7 Mbps"
+    }
+  },
+  {
+    "episodeNum": 38,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)",
+      "Level too high: 4.1 (needs ≤3.1)",
+      "Wrong audio: ac3 (needs aac)",
+      "High bitrate: 3.3 Mbps (iPhone prefers <2.5 Mbps)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "4.1",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p",
+      "audioCodec": "ac3",
+      "bitrate": "3.3 Mbps"
+    }
+  },
+  {
+    "episodeNum": 39,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)",
+      "Level too high: 4.1 (needs ≤3.1)",
+      "Wrong audio: ac3 (needs aac)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "4.1",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p",
+      "audioCodec": "ac3",
+      "bitrate": "2.1 Mbps"
+    }
+  },
+  {
+    "episodeNum": 40,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)",
+      "Level too high: 4.1 (needs ≤3.1)",
+      "Wrong audio: ac3 (needs aac)",
+      "High bitrate: 3.1 Mbps (iPhone prefers <2.5 Mbps)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "4.1",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p",
+      "audioCodec": "ac3",
+      "bitrate": "3.1 Mbps"
+    }
+  },
+  {
+    "episodeNum": 41,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: Main (needs Baseline)",
+      "Level too high: 4 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)",
+      "Wrong audio: eac3 (needs aac)",
+      "High bitrate: 5.7 Mbps (iPhone prefers <2.5 Mbps)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "Main",
+      "level": "4.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "eac3",
+      "bitrate": "5.7 Mbps"
+    }
+  },
+  {
+    "episodeNum": 42,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)",
+      "Level too high: 4 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)",
+      "High bitrate: 4.8 Mbps (iPhone prefers <2.5 Mbps)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "4.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "4.8 Mbps"
+    }
+  },
+  {
+    "episodeNum": 43,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)",
+      "Level too high: 4.1 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)",
+      "High bitrate: 4.4 Mbps (iPhone prefers <2.5 Mbps)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "4.1",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "4.4 Mbps"
+    }
+  },
+  {
+    "episodeNum": 44,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)",
+      "Level too high: 4.1 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)",
+      "High bitrate: 4.9 Mbps (iPhone prefers <2.5 Mbps)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "4.1",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "4.9 Mbps"
+    }
+  },
+  {
+    "episodeNum": 45,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)",
+      "Level too high: 4.1 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)",
+      "High bitrate: 3.7 Mbps (iPhone prefers <2.5 Mbps)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "4.1",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "3.7 Mbps"
+    }
+  },
+  {
+    "episodeNum": 46,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)",
+      "Level too high: 4.1 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)",
+      "High bitrate: 3.9 Mbps (iPhone prefers <2.5 Mbps)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "4.1",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "3.9 Mbps"
+    }
+  },
+  {
+    "episodeNum": 47,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)",
+      "Level too high: 4.1 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)",
+      "High bitrate: 4.8 Mbps (iPhone prefers <2.5 Mbps)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "4.1",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "4.8 Mbps"
+    }
+  },
+  {
+    "episodeNum": 48,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)",
+      "Level too high: 4 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)",
+      "Wrong audio: eac3 (needs aac)",
+      "High bitrate: 4.4 Mbps (iPhone prefers <2.5 Mbps)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "4.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "eac3",
+      "bitrate": "4.4 Mbps"
+    }
+  },
+  {
+    "episodeNum": 49,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)",
+      "Level too high: 4 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)",
+      "Wrong audio: eac3 (needs aac)",
+      "High bitrate: 4.3 Mbps (iPhone prefers <2.5 Mbps)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "4.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "eac3",
+      "bitrate": "4.3 Mbps"
+    }
+  },
+  {
+    "episodeNum": 50,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)",
+      "Level too high: 4.1 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)",
+      "High bitrate: 3.6 Mbps (iPhone prefers <2.5 Mbps)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "4.1",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "3.6 Mbps"
+    }
+  },
+  {
+    "episodeNum": 51,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)",
+      "Level too high: 4 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)",
+      "Wrong audio: ac3 (needs aac)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "4.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "ac3",
+      "bitrate": "2.8 Mbps"
+    }
+  },
+  {
+    "episodeNum": 52,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main 10 (needs Baseline)",
+      "Level too high: 12 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)",
+      "Wrong pixel format: yuv420p10le (needs yuv420p)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main 10",
+      "level": "12.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p10le",
+      "audioCodec": "aac",
+      "bitrate": "1.4 Mbps"
+    }
+  },
+  {
+    "episodeNum": 53,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)",
+      "Level too high: 4.1 (needs ≤3.1)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "4.1",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.8 Mbps"
+    }
+  },
+  {
+    "episodeNum": 54,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)",
+      "Level too high: 4 (needs ≤3.1)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)",
+      "Wrong audio: ac3 (needs aac)",
+      "High bitrate: 8.2 Mbps (iPhone prefers <2.5 Mbps)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "4.0",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p",
+      "audioCodec": "ac3",
+      "bitrate": "8.2 Mbps"
+    }
+  },
+  {
+    "episodeNum": 55,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)",
+      "Level too high: 4.1 (needs ≤3.1)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "4.1",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "2.0 Mbps"
+    }
+  },
+  {
+    "episodeNum": 56,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main 10 (needs Baseline)",
+      "Level too high: 9.3 (needs ≤3.1)",
+      "Wrong pixel format: yuv420p10le (needs yuv420p)",
+      "Wrong audio: ac3 (needs aac)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main 10",
+      "level": "9.3",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p10le",
+      "audioCodec": "ac3",
+      "bitrate": "1.3 Mbps"
+    }
+  },
+  {
+    "episodeNum": 57,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main 10 (needs Baseline)",
+      "Level too high: 9.3 (needs ≤3.1)",
+      "Wrong pixel format: yuv420p10le (needs yuv420p)",
+      "Wrong audio: ac3 (needs aac)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main 10",
+      "level": "9.3",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p10le",
+      "audioCodec": "ac3",
+      "bitrate": "1.0 Mbps"
+    }
+  },
+  {
+    "episodeNum": 58,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: Main (needs Baseline)",
+      "Wrong audio: ac3 (needs aac)",
+      "High bitrate: 3.3 Mbps (iPhone prefers <2.5 Mbps)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "Main",
+      "level": "3.1",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p",
+      "audioCodec": "ac3",
+      "bitrate": "3.3 Mbps"
+    }
+  },
+  {
+    "episodeNum": 59,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: Main (needs Baseline)",
+      "Wrong audio: ac3 (needs aac)",
+      "High bitrate: 3.4 Mbps (iPhone prefers <2.5 Mbps)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "Main",
+      "level": "3.1",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p",
+      "audioCodec": "ac3",
+      "bitrate": "3.4 Mbps"
+    }
+  },
+  {
+    "episodeNum": 60,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main 10 (needs Baseline)",
+      "Level too high: 9.3 (needs ≤3.1)",
+      "Wrong pixel format: yuv420p10le (needs yuv420p)",
+      "Wrong audio: ac3 (needs aac)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main 10",
+      "level": "9.3",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p10le",
+      "audioCodec": "ac3",
+      "bitrate": "1.1 Mbps"
+    }
+  },
+  {
+    "episodeNum": 61,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: hevc (needs h264)",
+      "Wrong profile: Main 10 (needs Baseline)",
+      "Level too high: 9.3 (needs ≤3.1)",
+      "Wrong pixel format: yuv420p10le (needs yuv420p)",
+      "Wrong audio: ac3 (needs aac)"
+    ],
+    "details": {
+      "codec": "hevc",
+      "profile": "Main 10",
+      "level": "9.3",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p10le",
+      "audioCodec": "ac3",
+      "bitrate": "0.4 Mbps"
+    }
+  },
+  {
+    "episodeNum": 62,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: av1 (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)",
+      "Wrong pixel format: yuv420p10le (needs yuv420p)",
+      "Wrong audio: opus (needs aac)"
+    ],
+    "details": {
+      "codec": "av1",
+      "profile": "Main",
+      "level": "0.8",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p10le",
+      "audioCodec": "opus",
+      "bitrate": "1.1 Mbps"
+    }
+  },
+  {
+    "episodeNum": 63,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: av1 (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)",
+      "Wrong pixel format: yuv420p10le (needs yuv420p)",
+      "Wrong audio: opus (needs aac)"
+    ],
+    "details": {
+      "codec": "av1",
+      "profile": "Main",
+      "level": "0.8",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p10le",
+      "audioCodec": "opus",
+      "bitrate": "1.1 Mbps"
+    }
+  },
+  {
+    "episodeNum": 64,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: av1 (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)",
+      "Wrong pixel format: yuv420p10le (needs yuv420p)",
+      "Wrong audio: opus (needs aac)"
+    ],
+    "details": {
+      "codec": "av1",
+      "profile": "Main",
+      "level": "0.8",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p10le",
+      "audioCodec": "opus",
+      "bitrate": "1.0 Mbps"
+    }
+  },
+  {
+    "episodeNum": 65,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: av1 (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)",
+      "Wrong pixel format: yuv420p10le (needs yuv420p)",
+      "Wrong audio: opus (needs aac)"
+    ],
+    "details": {
+      "codec": "av1",
+      "profile": "Main",
+      "level": "0.8",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p10le",
+      "audioCodec": "opus",
+      "bitrate": "0.9 Mbps"
+    }
+  },
+  {
+    "episodeNum": 66,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: av1 (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)",
+      "Wrong pixel format: yuv420p10le (needs yuv420p)",
+      "Wrong audio: opus (needs aac)"
+    ],
+    "details": {
+      "codec": "av1",
+      "profile": "Main",
+      "level": "0.8",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p10le",
+      "audioCodec": "opus",
+      "bitrate": "1.5 Mbps"
+    }
+  },
+  {
+    "episodeNum": 67,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: av1 (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)",
+      "Wrong pixel format: yuv420p10le (needs yuv420p)",
+      "Wrong audio: opus (needs aac)"
+    ],
+    "details": {
+      "codec": "av1",
+      "profile": "Main",
+      "level": "0.8",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p10le",
+      "audioCodec": "opus",
+      "bitrate": "1.0 Mbps"
+    }
+  },
+  {
+    "episodeNum": 68,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: av1 (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)",
+      "Wrong pixel format: yuv420p10le (needs yuv420p)",
+      "Wrong audio: opus (needs aac)"
+    ],
+    "details": {
+      "codec": "av1",
+      "profile": "Main",
+      "level": "0.8",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p10le",
+      "audioCodec": "opus",
+      "bitrate": "1.1 Mbps"
+    }
+  },
+  {
+    "episodeNum": 69,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: av1 (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)",
+      "Wrong pixel format: yuv420p10le (needs yuv420p)",
+      "Wrong audio: opus (needs aac)"
+    ],
+    "details": {
+      "codec": "av1",
+      "profile": "Main",
+      "level": "0.8",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p10le",
+      "audioCodec": "opus",
+      "bitrate": "1.4 Mbps"
+    }
+  },
+  {
+    "episodeNum": 70,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: av1 (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)",
+      "Wrong pixel format: yuv420p10le (needs yuv420p)",
+      "Wrong audio: opus (needs aac)"
+    ],
+    "details": {
+      "codec": "av1",
+      "profile": "Main",
+      "level": "0.8",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p10le",
+      "audioCodec": "opus",
+      "bitrate": "1.2 Mbps"
+    }
+  },
+  {
+    "episodeNum": 71,
+    "compatible": false,
+    "issues": [
+      "Wrong codec: av1 (needs h264)",
+      "Wrong profile: Main (needs Baseline)",
+      "Resolution too high: 1920x1080 (needs ≤1280x720)",
+      "Wrong pixel format: yuv420p10le (needs yuv420p)",
+      "Wrong audio: opus (needs aac)"
+    ],
+    "details": {
+      "codec": "av1",
+      "profile": "Main",
+      "level": "0.8",
+      "resolution": "1920x1080",
+      "pixFmt": "yuv420p10le",
+      "audioCodec": "opus",
+      "bitrate": "1.0 Mbps"
+    }
+  },
+  {
+    "episodeNum": 72,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "3.1",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.3 Mbps"
+    }
+  },
+  {
+    "episodeNum": 73,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "3.1",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.6 Mbps"
+    }
+  },
+  {
+    "episodeNum": 74,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "3.1",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.2 Mbps"
+    }
+  },
+  {
+    "episodeNum": 75,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "3.1",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.5 Mbps"
+    }
+  },
+  {
+    "episodeNum": 76,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "3.1",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.3 Mbps"
+    }
+  },
+  {
+    "episodeNum": 77,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "3.1",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.2 Mbps"
+    }
+  },
+  {
+    "episodeNum": 78,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "3.1",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.1 Mbps"
+    }
+  },
+  {
+    "episodeNum": 79,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "3.1",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "0.9 Mbps"
+    }
+  },
+  {
+    "episodeNum": 80,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "3.1",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "1.1 Mbps"
+    }
+  },
+  {
+    "episodeNum": 81,
+    "compatible": false,
+    "issues": [
+      "Wrong profile: High (needs Baseline)"
+    ],
+    "details": {
+      "codec": "h264",
+      "profile": "High",
+      "level": "3.1",
+      "resolution": "1280x720",
+      "pixFmt": "yuv420p",
+      "audioCodec": "aac",
+      "bitrate": "2.1 Mbps"
+    }
+  }
+]

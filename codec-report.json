@@ -1,0 +1,1217 @@
+[
+  {
+    "episodeNum": 1,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 2,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 3,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 4,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 5,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 6,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 7,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 8,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 9,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 10,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 11,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 12,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1916x1076",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 13,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1916x1076",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 14,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 15,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 16,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1916x1076",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 17,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1916x1076",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 18,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1916x1076",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 19,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1916x1076",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 20,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 21,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 22,
+    "videoCodec": "hevc",
+    "videoProfile": "Main 10",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 23,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 24,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 25,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 26,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 27,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 28,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 29,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 30,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 31,
+    "videoCodec": "hevc",
+    "videoProfile": "Main",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 32,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "aac",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 33,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "ac3",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 34,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "ac3",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 35,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "ac3",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 36,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "ac3",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 37,
+    "videoCodec": "h264",
+    "videoProfile": "Main",
+    "audioCodec": "eac3",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 38,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "ac3",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 39,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "ac3",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 40,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "ac3",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 41,
+    "videoCodec": "h264",
+    "videoProfile": "Main",
+    "audioCodec": "eac3",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 42,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 43,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 44,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 45,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 46,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 47,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 48,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "eac3",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 49,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "eac3",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 50,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 51,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "ac3",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 52,
+    "videoCodec": "hevc",
+    "videoProfile": "Main 10",
+    "audioCodec": "aac",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 53,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "aac",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 54,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "ac3",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 55,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "aac",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 56,
+    "videoCodec": "hevc",
+    "videoProfile": "Main 10",
+    "audioCodec": "ac3",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 57,
+    "videoCodec": "hevc",
+    "videoProfile": "Main 10",
+    "audioCodec": "ac3",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 58,
+    "videoCodec": "h264",
+    "videoProfile": "Main",
+    "audioCodec": "ac3",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 59,
+    "videoCodec": "h264",
+    "videoProfile": "Main",
+    "audioCodec": "ac3",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 60,
+    "videoCodec": "hevc",
+    "videoProfile": "Main 10",
+    "audioCodec": "ac3",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 61,
+    "videoCodec": "hevc",
+    "videoProfile": "Main 10",
+    "audioCodec": "ac3",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": false,
+      "firefox": false,
+      "safari": true,
+      "edge": false,
+      "android": false,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 62,
+    "videoCodec": "av1",
+    "videoProfile": "Main",
+    "audioCodec": "opus",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 63,
+    "videoCodec": "av1",
+    "videoProfile": "Main",
+    "audioCodec": "opus",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 64,
+    "videoCodec": "av1",
+    "videoProfile": "Main",
+    "audioCodec": "opus",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 65,
+    "videoCodec": "av1",
+    "videoProfile": "Main",
+    "audioCodec": "opus",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 66,
+    "videoCodec": "av1",
+    "videoProfile": "Main",
+    "audioCodec": "opus",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 67,
+    "videoCodec": "av1",
+    "videoProfile": "Main",
+    "audioCodec": "opus",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 68,
+    "videoCodec": "av1",
+    "videoProfile": "Main",
+    "audioCodec": "opus",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 69,
+    "videoCodec": "av1",
+    "videoProfile": "Main",
+    "audioCodec": "opus",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 70,
+    "videoCodec": "av1",
+    "videoProfile": "Main",
+    "audioCodec": "opus",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 71,
+    "videoCodec": "av1",
+    "videoProfile": "Main",
+    "audioCodec": "opus",
+    "resolution": "1920x1080",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 72,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "aac",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 73,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "aac",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 74,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "aac",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 75,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "aac",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 76,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "aac",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 77,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "aac",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 78,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "aac",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 79,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "aac",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 80,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "aac",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  },
+  {
+    "episodeNum": 81,
+    "videoCodec": "h264",
+    "videoProfile": "High",
+    "audioCodec": "aac",
+    "resolution": "1280x720",
+    "browserCompat": {
+      "chrome": true,
+      "firefox": true,
+      "safari": true,
+      "edge": true,
+      "android": true,
+      "iOS": false
+    }
+  }
+]

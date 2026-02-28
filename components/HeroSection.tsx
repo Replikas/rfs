@@ -1,0 +1,162 @@
+'use client';
+
+import { Episode } from '@/lib/api';
+import { Play, Info, ChevronLeft, ChevronRight, Zap } from 'lucide-react';
+import Link from 'next/link';
+import { useState, useEffect, useCallback } from 'react';
+
+interface HeroSectionProps {
+  featuredEpisodes: Episode[];
+  summaries: Record<number, string>;
+}
+
+export default function HeroSection({ featuredEpisodes, summaries }: HeroSectionProps) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [backdrop, setBackdrop] = useState<string>('');
+  const [isPlaceholder, setIsPlaceholder] = useState(false);
+  const [isExiting, setIsExiting] = useState(false);
+
+  const currentEpisode = featuredEpisodes[currentIndex];
+  const currentSummary = summaries[currentEpisode.id];
+
+  const updateBackdrop = useCallback((episodeCode: string) => {
+    fetch(`/api/episode-backdrop?code=${episodeCode}`)
+      .then(res => res.json())
+      .then(data => {
+        setBackdrop(data.backdrop);
+        setIsPlaceholder(data.isPlaceholder || false);
+      })
+      .catch(() => {
+        setBackdrop('https://images4.alphacoders.com/131/1313607.png');
+        setIsPlaceholder(false);
+      });
+  }, []);
+
+  useEffect(() => {
+    updateBackdrop(currentEpisode.episode);
+  }, [currentIndex, currentEpisode.episode, updateBackdrop]);
+
+  // Auto-rotation logic
+  useEffect(() => {
+    const timer = setInterval(() => {
+      handleNext();
+    }, 15000); // Rotate every 15 seconds
+    return () => clearInterval(timer);
+  }, [currentIndex]);
+
+  const handleNext = () => {
+    setIsExiting(true);
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev + 1) % featuredEpisodes.length);
+      setIsExiting(false);
+    }, 500);
+  };
+
+  const handlePrev = () => {
+    setIsExiting(true);
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev - 1 + featuredEpisodes.length) % featuredEpisodes.length);
+      setIsExiting(false);
+    }, 500);
+  };
+
+  return (
+    <div className="relative h-[65vh] md:h-[95vh] w-full overflow-hidden bg-black pt-[70px] md:pt-[80px]">
+      {/* Background Image with Ken Burns Effect */}
+      <div className={`absolute inset-0 transition-all duration-1000 ${isExiting ? 'opacity-0 scale-110' : 'opacity-100'}`}>
+        <div 
+          className="absolute inset-0 bg-cover bg-center animate-ken-burns transition-opacity duration-1000"
+          style={{ backgroundImage: `url(${backdrop})` }}
+        />
+        
+        {/* Cinematic Gradient Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent z-10 hidden md:block" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent z-10 opacity-50" />
+        
+        {/* Subtle Portal Dust / Science Particles */}
+        <div className="absolute inset-0 z-10 pointer-events-none opacity-20">
+          <div className="absolute top-[20%] left-[15%] w-2 h-2 bg-[var(--accent)] rounded-full blur-[1px] animate-particle" />
+          <div className="absolute top-[60%] left-[80%] w-3 h-3 bg-[var(--accent-glow)] rounded-full blur-[2px] animate-particle" style={{ animationDelay: '-5s' }} />
+          <div className="absolute top-[40%] left-[40%] w-1.5 h-1.5 bg-white rounded-full blur-[1px] animate-particle" style={{ animationDelay: '-10s' }} />
+        </div>
+      </div>
+
+      {/* Content Overlay */}
+      <div className={`relative z-20 h-full flex flex-col justify-center md:justify-end px-6 md:px-16 pb-12 md:pb-32 transition-all duration-700 ${isExiting ? 'translate-y-10 opacity-0' : 'translate-y-0 opacity-100'}`}>
+        
+        <div className="flex flex-col items-center md:items-start text-center md:text-left max-w-md md:max-w-4xl mx-auto md:mx-0 w-full mb-8 md:mb-0 pt-20 md:pt-0">
+          {/* Animated Episode Tag */}
+          <div className="flex items-center gap-2 mb-2 animate-fade-in">
+            <span className="flex items-center gap-1.2 bg-black/40 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-white/10 text-white/90 text-[9px] md:text-xs font-black tracking-[0.2em] uppercase">
+              <Zap size={10} className="text-[var(--accent)] fill-current" />
+              S{currentEpisode.episode.substring(1, 3)} • E{currentEpisode.episode.substring(4)}
+            </span>
+          </div>
+
+          {/* Aggressive Cinematic Title */}
+          <div className="overflow-visible mb-4 md:mb-6 w-full group max-w-3xl">
+            <h1 className="text-[clamp(1.8rem,8vw,3rem)] md:text-[clamp(3rem,5vw,5rem)] font-black text-white tracking-tighter leading-[1.05] italic uppercase drop-shadow-[0_15px_45px_rgba(0,0,0,0.9)] py-1 select-none glitch-hover transition-transform duration-300 group-hover:scale-[1.01]">
+              {currentEpisode.name}
+            </h1>
+          </div>
+
+          {/* Summary - Improved Readability with subtle background */}
+          <div className="max-w-2xl mb-6 md:mb-10 hidden md:block">
+            <div className="relative">
+              <p className="text-lg text-gray-100 line-clamp-3 font-medium leading-relaxed drop-shadow-lg opacity-90 border-l-4 border-[var(--accent)] pl-6 py-1">
+                {currentSummary || `The multiversal chaos of ${currentEpisode.episode}.`}
+              </p>
+            </div>
+          </div>
+
+          {/* Action Row */}
+          <div className="flex flex-row gap-3 w-full md:w-auto items-center">
+            <Link 
+              href={`/watch/${currentEpisode.id}`}
+              className="flex-1 md:flex-none flex items-center justify-center gap-3 bg-white text-black px-6 md:px-12 py-2.5 md:py-4 rounded-md font-black text-sm md:text-xl transition-all hover:bg-[var(--accent)] hover:text-white active:scale-95 shadow-2xl hover:shadow-[0_0_30px_rgba(0,181,204,0.4)] group"
+            >
+              <Play className="fill-current w-4 h-4 md:w-6 md:h-6 group-hover:scale-110 transition-transform" />
+              PLAY
+            </Link>
+            <Link 
+              href={`/watch/${currentEpisode.id}`}
+              className="flex-1 md:flex-none flex items-center justify-center gap-3 bg-gray-500/20 backdrop-blur-xl text-white px-6 md:px-12 py-2.5 md:py-4 rounded-md font-bold text-sm md:text-xl transition-all hover:bg-gray-500/40 active:scale-95 border border-white/10 group shadow-xl"
+            >
+              <Info className="w-4 h-4 md:w-6 md:h-6 group-hover:rotate-12 transition-transform" />
+              <span className="md:hidden">INFO</span>
+              <span className="hidden md:inline">MORE INFO</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Modern Navigation Arrows */}
+      <div className="hidden md:flex absolute bottom-12 right-16 z-30 gap-6">
+        <button 
+          onClick={handlePrev}
+          className="p-4 rounded-full border border-white/10 bg-black/20 hover:bg-[var(--accent)] hover:border-[var(--accent)] hover:text-white transition-all text-white/60 backdrop-blur-xl active:scale-90"
+        >
+          <ChevronLeft className="w-8 h-8" />
+        </button>
+        <button 
+          onClick={handleNext}
+          className="p-4 rounded-full border border-white/10 bg-black/20 hover:bg-[var(--accent)] hover:border-[var(--accent)] hover:text-white transition-all text-white/60 backdrop-blur-xl active:scale-90"
+        >
+          <ChevronRight className="w-8 h-8" />
+        </button>
+      </div>
+
+      {/* Index Indicators */}
+      <div className="absolute bottom-14 md:bottom-12 left-1/2 -translate-x-1/2 z-30 flex gap-2 md:gap-3">
+        {featuredEpisodes.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrentIndex(i)}
+            className={`h-1.5 transition-all duration-500 rounded-full ${i === currentIndex ? 'w-10 md:w-14 bg-[var(--accent)] shadow-[0_0_15px_var(--accent)]' : 'w-2 md:w-3 bg-white/20 hover:bg-white/40'}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
