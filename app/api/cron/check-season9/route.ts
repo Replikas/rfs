@@ -182,12 +182,17 @@ export async function GET(request: Request) {
     const verified: any[] = [];
     const skipped: any[] = [];
 
+    // RELAXED TMDB CHECK FOR PREMIERE SPEED: 
+    // If the episode is on EZTV, we trust it even if TMDB hasn't updated the air_date yet.
+    // TMDB metadata is now used as a fallback/enhancement, not a blocker.
     for (const ep of candidates) {
       const tmdb = await verifyEpisodeAired(ep.episode);
       if (tmdb) {
         verified.push({ ...ep, tmdbName: tmdb.name, tmdbAirDate: tmdb.airDate });
       } else {
-        skipped.push({ episode: ep.episode, reason: 'not yet aired or not on TMDB' });
+        // PREMIERE BYPASS: Still add it even if TMDB fails, as long as it's Season 9
+        console.log(`TMDB check failed for S09E${ep.episode}, but bypassing for premiere speed ✅`);
+        verified.push({ ...ep, tmdbName: `S09E${String(ep.episode).padStart(2,'0')}`, tmdbAirDate: new Date().toISOString() });
       }
     }
 
