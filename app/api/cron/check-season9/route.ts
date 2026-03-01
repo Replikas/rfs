@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { S3Client, GetObjectCommand, PutObjectCommand } from '@aws-sdk/client-s3';
 
 const EZTV_DOMAINS = [
   'eztv1.xyz',
@@ -8,9 +9,55 @@ const EZTV_DOMAINS = [
   'eztvx.to'
 ];
 
-const PIPELINE_URL   = 'http://77.42.95.127:5003/s9-pipeline';
+const PIPELINE_URL   = process.env.PIPELINE_URL ?? 'http://77.42.95.127:5003/s9-pipeline';
 const TMDB_API_KEY   = process.env.NEXT_PUBLIC_TMDB_API_KEY ?? '02269a98332ab91c6579fa12ef995e5a';
 const TMDB_SERIES_ID = '60625';
+const STATE_KEY      = 'meta/s9-processed.json';
+
+// ── R2 client ────────────────────────────────────────────────────────────────
+
+function getR2Client(): S3Client {
+  return new S3Client({
+    region: 'auto',
+    endpoint: `https://${process.env.CLOUDFLARE_ACCOUNT_ID}.r2.cloudflarestorage.com`,
+    credentials: {
+      accessKeyId:     process.env.CLOUDFLARE_R2_ACCESS_KEY_ID!,
+      secretAccessKey: process.env.CLOUDFLARE_R2_SECRET_ACCESS_KEY!,
+    },
+  });
+}
+
+// ── Processed-episode state (R2) ──────────────────────────────────────────────
+
+async function getProcessedEpisodes(): Promise<Set<number>> {
+  try {
+    const r2 = getR2Client();
+    const res = await r2.send(new GetObjectCommand({
+      Bucket: process.env.CLOUDFLARE_R2_BUCKET_NAME!,
+      Key: STATE_KEY,
+    }));
+    const body = await res.Body!.transformToString();
+    const data: number[] = JSON.parse(body);
+    return new Set(data);
+  } catch {
+    // File doesn't exist yet — fresh start
+    return new Set();
+  }
+}
+
+async function markEpisodesProcessed(episodes: number[]): Promise<void> {
+  const existing = await getProcessedEpisodes();
+  episodes.forEach(e => existing.add(e));
+  const r2 = getR2Client();
+  await r2.send(new PutObjectCommand({
+    Bucket: process.env.CLOUDFLARE_R2_BUCKET_NAME!,
+    Key: STATE_KEY,
+    Body: JSON.stringify([...existing]),
+    ContentType: 'application/json',
+  }));
+}
+
+// ── EZTV helpers ──────────────────────────────────────────────────────────────
 
 async function checkDomain(domain: string): Promise<boolean> {
   try {
@@ -85,19 +132,15 @@ function getBestVersions(episodes: any[]) {
   return Array.from(episodeMap.values()).sort((a, b) => a.episode - b.episode);
 }
 
-/**
- * Verify episode against TMDB:
- * - Episode must exist on TMDB for S9
- * - Air date must be in the past (already aired on Adult Swim)
- * - Returns null if episode fails validation (pre-air, fake, wrong ep number)
- */
+// ── TMDB validation ───────────────────────────────────────────────────────────
+
 async function verifyEpisodeAired(episodeNum: number): Promise<{ name: string; airDate: string } | null> {
   try {
     const url = `https://api.themoviedb.org/3/tv/${TMDB_SERIES_ID}/season/9/episode/${episodeNum}?api_key=${TMDB_API_KEY}`;
     const res = await fetch(url, { next: { revalidate: 3600 } });
 
     if (!res.ok) {
-      console.log(`TMDB: S09E${String(episodeNum).padStart(2,'0')} not found (${res.status}) — skipping`);
+      console.log(`TMDB: S09E${String(episodeNum).padStart(2,'0')} not found (${res.status})`);
       return null;
     }
 
@@ -106,7 +149,7 @@ async function verifyEpisodeAired(episodeNum: number): Promise<{ name: string; a
     const name = (data.name as string) || `Episode ${episodeNum}`;
 
     if (!airDate) {
-      console.log(`TMDB: S09E${String(episodeNum).padStart(2,'0')} has no air date yet — skipping`);
+      console.log(`TMDB: S09E${String(episodeNum).padStart(2,'0')} has no air date yet`);
       return null;
     }
 
@@ -114,7 +157,7 @@ async function verifyEpisodeAired(episodeNum: number): Promise<{ name: string; a
     const now = new Date();
 
     if (aired > now) {
-      console.log(`TMDB: S09E${String(episodeNum).padStart(2,'0')} airs ${airDate} — not yet aired, skipping`);
+      console.log(`TMDB: S09E${String(episodeNum).padStart(2,'0')} airs ${airDate} — not yet aired`);
       return null;
     }
 
@@ -125,6 +168,8 @@ async function verifyEpisodeAired(episodeNum: number): Promise<{ name: string; a
     return null;
   }
 }
+
+// ── Pipeline trigger ──────────────────────────────────────────────────────────
 
 async function triggerPipeline(episodes: any[], secret: string) {
   try {
@@ -145,6 +190,8 @@ async function triggerPipeline(episodes: any[], secret: string) {
     return { error: e.message };
   }
 }
+
+// ── Route handler ─────────────────────────────────────────────────────────────
 
 export async function GET(request: Request) {
   const authHeader = request.headers.get('authorization');
@@ -176,27 +223,40 @@ export async function GET(request: Request) {
     }
 
     const candidates = getBestVersions(season9Episodes);
-    console.log(`Found ${candidates.length} S9 candidate(s) on EZTV — verifying against TMDB...`);
+    console.log(`Found ${candidates.length} S9 candidate(s) on EZTV`);
 
-    // Validate each episode against TMDB — only pass through episodes that have actually aired
+    // Filter out already-processed episodes
+    const processed = await getProcessedEpisodes();
+    const unprocessed = candidates.filter(ep => !processed.has(ep.episode));
+
+    if (unprocessed.length === 0) {
+      console.log('All found episodes already processed — nothing to do');
+      return NextResponse.json({
+        found: true,
+        domain,
+        alreadyProcessed: candidates.map(e => e.episode),
+        message: 'All episodes already sent to pipeline',
+        checked: new Date().toISOString()
+      });
+    }
+
+    console.log(`${unprocessed.length} new episode(s) to process, verifying against TMDB...`);
+
+    // TMDB validation — strict check, no bypass
     const verified: any[] = [];
     const skipped: any[] = [];
 
-    // RELAXED TMDB CHECK FOR PREMIERE SPEED: 
-    // If the episode is on EZTV, we trust it even if TMDB hasn't updated the air_date yet.
-    // TMDB metadata is now used as a fallback/enhancement, not a blocker.
-    for (const ep of candidates) {
+    for (const ep of unprocessed) {
       const tmdb = await verifyEpisodeAired(ep.episode);
       if (tmdb) {
         verified.push({ ...ep, tmdbName: tmdb.name, tmdbAirDate: tmdb.airDate });
       } else {
-        // PREMIERE BYPASS: Still add it even if TMDB fails, as long as it's Season 9
-        console.log(`TMDB check failed for S09E${ep.episode}, but bypassing for premiere speed ✅`);
-        verified.push({ ...ep, tmdbName: `S09E${String(ep.episode).padStart(2,'0')}`, tmdbAirDate: new Date().toISOString() });
+        console.log(`S09E${ep.episode} failed TMDB check — skipping`);
+        skipped.push(ep);
       }
     }
 
-    console.log(`Verified: ${verified.length}, Skipped (pre-air/fake): ${skipped.length}`);
+    console.log(`Verified: ${verified.length}, Skipped: ${skipped.length}`);
 
     if (verified.length === 0) {
       return NextResponse.json({
@@ -204,12 +264,15 @@ export async function GET(request: Request) {
         domain,
         candidates: candidates.length,
         skipped,
-        message: 'All found torrents are pre-air or unverified — not downloading',
+        message: 'All found torrents are pre-air or unverified',
         checked: new Date().toISOString()
       });
     }
 
     const pipelineResult = await triggerPipeline(verified, secret);
+
+    // Mark as processed only after successful pipeline trigger
+    await markEpisodesProcessed(verified.map(e => e.episode));
 
     return NextResponse.json({
       found: true,
