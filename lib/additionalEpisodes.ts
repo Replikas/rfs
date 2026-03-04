@@ -39,7 +39,4 @@ export const additionalEpisodes: Episode[] = [
   { id: 79, name: "Nomortland", air_date: "July 13, 2025", episode: "S08E08", characters: [], url: "", created: "" },
   { id: 80, name: "Morty Daddy", air_date: "July 20, 2025", episode: "S08E09", characters: [], url: "", created: "" },
   { id: 81, name: "Hot Rick", air_date: "July 27, 2025", episode: "S08E10", characters: [], url: "", created: "" },
-
-  // Season 9 (Upcoming / Leaks)
-  { id: 82, name: "Season 9 Premiere (Coming Soon)", air_date: "TBA 2026", episode: "S09E01", characters: [], url: "", created: "" },
 ];
