@@ -9,13 +9,12 @@ export const dynamic = 'force-dynamic';
 export default async function Home() {
   const episodes = await getAllEpisodes();
   
-  // Logic to pick featured episodes:
-  // 1. Prioritize Season 9 (newest drops)
-  // 2. Fill the rest with random classics
-  const s9Episodes = episodes.filter(e => e.episode.startsWith('S09')).reverse();
-  const otherEpisodes = episodes.filter(e => !e.episode.startsWith('S09')).sort(() => 0.5 - Math.random());
-  
-  const featuredEpisodes = [...s9Episodes, ...otherEpisodes].slice(0, 5);
+  // Hero should showcase real aired episodes, not placeholder Season 9 entries.
+  const heroEligibleEpisodes = episodes
+    .filter(e => !e.episode.startsWith('S09'))
+    .sort(() => 0.5 - Math.random());
+
+  const featuredEpisodes = heroEligibleEpisodes.slice(0, 5);
 
   // Fetch all thumbnails and summaries
   const thumbnails: Record<number, string> = {};
