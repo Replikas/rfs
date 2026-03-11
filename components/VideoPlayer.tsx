@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { saveWatchProgress } from '@/lib/watchProgress';
-import { getIntroSegment } from '@/lib/introSegments';
 import Hls from 'hls.js';
 
 interface VideoPlayerProps {
@@ -15,7 +14,6 @@ interface VideoPlayerProps {
   resumeTime?: number | null;
   enableSubtitles?: boolean;
   showCCButton?: boolean;
-  showSkipIntro?: boolean;
 }
 
 export default function VideoPlayer({ 
@@ -27,16 +25,12 @@ export default function VideoPlayer({
   autoPlay = true,
   resumeTime = null,
   enableSubtitles = false,
-  showCCButton = true,
-  showSkipIntro = true
+  showCCButton = true
 }: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const hlsRef = useRef<Hls | null>(null);
   const [subtitlesEnabled, setSubtitlesEnabled] = useState(enableSubtitles);
   const [hasResumed, setHasResumed] = useState(false);
-  const [showSkipIntroButton, setShowSkipIntroButton] = useState(false);
-  const [introSkipped, setIntroSkipped] = useState(false);
-  const introSegment = getIntroSegment(episodeId);
   
   // Generate subtitle URL
   const subtitleUrl = episodeId 
@@ -92,8 +86,6 @@ export default function VideoPlayer({
   
   useEffect(() => {
     setHasResumed(false);
-    setShowSkipIntroButton(false);
-    setIntroSkipped(false);
   }, [src, episodeId]);
 
   // Sync enableSubtitles prop with state
@@ -141,13 +133,6 @@ export default function VideoPlayer({
         onTimeUpdate(video.currentTime, video.duration);
       }
 
-      if (showSkipIntro && introSegment && !introSkipped) {
-        const withinIntroWindow = video.currentTime >= introSegment.start && video.currentTime < introSegment.end;
-        setShowSkipIntroButton(withinIntroWindow);
-      } else if (showSkipIntroButton) {
-        setShowSkipIntroButton(false);
-      }
-
       if (episodeId && video.duration > 0 && Math.floor(video.currentTime) % 5 === 0) {
         saveWatchProgress({
           episodeId: parseInt(episodeId),
@@ -169,7 +154,7 @@ export default function VideoPlayer({
       video.removeEventListener('timeupdate', handleTimeUpdate);
       video.removeEventListener('error', handleError);
     };
-  }, [onEnded, onTimeUpdate, onError, episodeId, enableSubtitles, introSegment, introSkipped, showSkipIntro, showSkipIntroButton]);
+  }, [onEnded, onTimeUpdate, onError, episodeId, enableSubtitles]);
 
   const toggleSubtitles = () => {
     const video = videoRef.current;
@@ -181,15 +166,6 @@ export default function VideoPlayer({
     for (let i = 0; i < video.textTracks.length; i++) {
       video.textTracks[i].mode = newState ? 'showing' : 'disabled';
     }
-  };
-
-  const handleSkipIntro = () => {
-    const video = videoRef.current;
-    if (!video || !introSegment) return;
-
-    video.currentTime = introSegment.end;
-    setIntroSkipped(true);
-    setShowSkipIntroButton(false);
   };
 
   return (
@@ -215,15 +191,6 @@ export default function VideoPlayer({
         )}
       </video>
       
-      {showSkipIntro && showSkipIntroButton && introSegment && (
-        <button
-          onClick={handleSkipIntro}
-          className="absolute top-4 right-4 px-4 py-2 rounded-full text-xs font-black tracking-wide transition-all z-50 bg-white/95 text-black shadow-2xl hover:scale-105"
-        >
-          Skip Intro
-        </button>
-      )}
-
       {subtitleUrl && showCCButton && (
         <button
           onClick={toggleSubtitles}
