@@ -155,19 +155,21 @@ async function triggerPipeline(episodes: EpisodeCandidate[], secret: string) {
 
 export async function GET(request: Request) {
   const authHeader = request.headers.get('authorization');
-  const secret = process.env.CRON_SECRET ?? '';
-  if (authHeader !== `Bearer ${secret}`) {
-    const url = new URL(request.url);
-    if (!url.searchParams.has('test')) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
+  const routeSecret = process.env.CRON_SECRET ?? '';
+  const url = new URL(request.url);
+  const isTest = url.searchParams.has('test');
+
+  if (authHeader !== `Bearer ${routeSecret}` && !isTest) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
+
+  const collectorSecret = routeSecret || process.env.COLLECTOR_SECRET || 'rickflix-s9-monitor-secret-2026';
 
   console.log('Checking for Rick and Morty Season 9...');
 
   let collector: CollectorResponse;
   try {
-    collector = await fetchCollector(secret);
+    collector = await fetchCollector(collectorSecret);
   } catch (error: any) {
     return NextResponse.json({
       found: false,
