@@ -9,10 +9,36 @@ const EZTV_DOMAINS = [
   'eztvx.to'
 ];
 
+const SEARCH_SOURCES = [
+  {
+    name: 'eztv',
+    type: 'html' as const,
+    getUrl: async () => {
+      const domain = await findActiveDomain();
+      return domain ? `https://${domain}/search/rick-and-morty` : null;
+    },
+    parse: parseEztvSeason9,
+  },
+  {
+    name: 'torrentgalaxy',
+    type: 'json' as const,
+    getUrl: async () => 'https://torrentgalaxy.to/torrents.php?search=rick+and+morty',
+    parse: parseGenericSeason9,
+  },
+  {
+    name: '1337x',
+    type: 'html' as const,
+    getUrl: async () => 'https://www.1337x.to/search/rick%20and%20morty/1/',
+    parse: parseGenericSeason9,
+  }
+];
+
 const PIPELINE_URL   = process.env.PIPELINE_URL ?? 'http://77.42.95.127:5003/s9-pipeline';
 const TMDB_API_KEY   = process.env.NEXT_PUBLIC_TMDB_API_KEY ?? '02269a98332ab91c6579fa12ef995e5a';
 const TMDB_SERIES_ID = '60625';
 const STATE_KEY      = 'meta/s9-processed.json';
+const USER_AGENT     = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36';
+const QUALITY_ORDER: Record<string, number> = { '2160p': 3, '1080p': 2, '720p': 1, 'Unknown': 0 };
 
 // ── R2 client ────────────────────────────────────────────────────────────────
 
@@ -40,7 +66,6 @@ async function getProcessedEpisodes(): Promise<Set<number>> {
     const data: number[] = JSON.parse(body);
     return new Set(data);
   } catch {
-    // File doesn't exist yet — fresh start
     return new Set();
   }
 }
@@ -57,7 +82,18 @@ async function markEpisodesProcessed(episodes: number[]): Promise<void> {
   }));
 }
 
-// ── EZTV helpers ──────────────────────────────────────────────────────────────
+// ── Discovery helpers ────────────────────────────────────────────────────────
+
+type EpisodeCandidate = {
+  title: string;
+  season: number;
+  episode: number;
+  episodeId: number;
+  magnetLink: string | null;
+  fileSize: string;
+  quality: string;
+  source: string;
+};
 
 async function checkDomain(domain: string): Promise<boolean> {
   try {
@@ -65,7 +101,7 @@ async function checkDomain(domain: string): Promise<boolean> {
     const timeout = setTimeout(() => controller.abort(), 5000);
     const res = await fetch(`https://${domain}`, {
       signal: controller.signal,
-      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' }
+      headers: { 'User-Agent': USER_AGENT }
     });
     clearTimeout(timeout);
     return res.ok || res.status === 301 || res.status === 302;
@@ -81,8 +117,39 @@ async function findActiveDomain(): Promise<string | null> {
   return null;
 }
 
-function parseForSeason9(html: string) {
-  const episodes: any[] = [];
+function detectQuality(title: string) {
+  const lower = title.toLowerCase();
+  if (lower.includes('2160p') || lower.includes('4k')) return '2160p';
+  if (lower.includes('1080p')) return '1080p';
+  if (lower.includes('720p')) return '720p';
+  return 'Unknown';
+}
+
+function buildCandidate(title: string, magnetLink: string | null, fileSize: string, source: string): EpisodeCandidate | null {
+  const normalizedTitle = title.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+  const lower = normalizedTitle.toLowerCase();
+
+  if (!lower.includes('rick') || !lower.includes('morty')) return null;
+
+  const episodeMatch = normalizedTitle.match(/[Ss]09[Ee](\d{2})/);
+  if (!episodeMatch) return null;
+
+  const episode = parseInt(episodeMatch[1]);
+
+  return {
+    title: normalizedTitle,
+    season: 9,
+    episode,
+    episodeId: 80 + episode,
+    magnetLink,
+    fileSize,
+    quality: detectQuality(normalizedTitle),
+    source,
+  };
+}
+
+function parseEztvSeason9(html: string, source: string) {
+  const episodes: EpisodeCandidate[] = [];
   const rowRegex = /<tr[^>]*class="forum_header_border"[^>]*>([\s\S]*?)<\/tr>/g;
   const rows = [...html.matchAll(rowRegex)];
 
@@ -91,44 +158,82 @@ function parseForSeason9(html: string) {
     const titleMatch = rowHtml.match(/class="epinfo"[^>]*>([\s\S]*?)<\/a>/);
     if (!titleMatch) continue;
 
-    const title = titleMatch[1].replace(/<[^>]*>/g, '').trim();
-    if (!title.toLowerCase().includes('rick') || !title.toLowerCase().includes('morty')) continue;
-
-    const episodeMatch = title.match(/[Ss]09[Ee](\d{2})/);
-    if (!episodeMatch) continue;
-
-    const episode = parseInt(episodeMatch[1]);
     const magnetMatch = rowHtml.match(/href="(magnet:[^"]+)"/);
     const sizeMatch = rowHtml.match(/<td[^>]*class="forum_thread_post"[^>]*>\s*([\d.]+\s*[MGT]B)/i);
-
-    let quality = 'Unknown';
-    if (title.includes('2160p') || title.includes('4K')) quality = '2160p';
-    else if (title.includes('1080p')) quality = '1080p';
-    else if (title.includes('720p')) quality = '720p';
-
-    episodes.push({
-      title,
-      season: 9,
-      episode,
-      episodeId: 80 + episode,
-      magnetLink: magnetMatch ? magnetMatch[1] : null,
-      fileSize: sizeMatch ? sizeMatch[1] : 'Unknown',
-      quality
-    });
+    const candidate = buildCandidate(titleMatch[1], magnetMatch ? magnetMatch[1] : null, sizeMatch ? sizeMatch[1] : 'Unknown', source);
+    if (candidate) episodes.push(candidate);
   }
+
   return episodes;
 }
 
-function getBestVersions(episodes: any[]) {
-  const episodeMap = new Map();
-  const qualityOrder: Record<string, number> = { '2160p': 3, '1080p': 2, '720p': 1, 'Unknown': 0 };
+function parseGenericSeason9(html: string, source: string) {
+  const episodes: EpisodeCandidate[] = [];
+  const magnetRegex = /(magnet:\?xt=urn:[^"'\s<>]+)/gi;
+  const seen = new Set<string>();
+
+  for (const match of html.matchAll(magnetRegex)) {
+    const magnet = match[1];
+    if (seen.has(magnet)) continue;
+    seen.add(magnet);
+
+    const start = Math.max(0, match.index! - 500);
+    const end = Math.min(html.length, match.index! + 500);
+    const context = html.slice(start, end).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+    const candidate = buildCandidate(context, magnet, 'Unknown', source);
+    if (candidate) episodes.push(candidate);
+  }
+
+  return episodes;
+}
+
+async function fetchSourceEpisodes(source: typeof SEARCH_SOURCES[number]) {
+  try {
+    const url = await source.getUrl();
+    if (!url) {
+      return { source: source.name, episodes: [] as EpisodeCandidate[], error: 'Source unavailable' };
+    }
+
+    const res = await fetch(url, {
+      headers: { 'User-Agent': USER_AGENT },
+      signal: AbortSignal.timeout(10000)
+    });
+
+    if (!res.ok) {
+      return { source: source.name, episodes: [] as EpisodeCandidate[], error: `HTTP ${res.status}` };
+    }
+
+    const html = await res.text();
+    const episodes = source.parse(html, source.name);
+    return { source: source.name, episodes };
+  } catch (e: any) {
+    return { source: source.name, episodes: [] as EpisodeCandidate[], error: e.message };
+  }
+}
+
+function getBestVersions(episodes: EpisodeCandidate[]) {
+  const episodeMap = new Map<number, EpisodeCandidate>();
 
   for (const ep of episodes) {
     const existing = episodeMap.get(ep.episode);
-    if (!existing || (qualityOrder[ep.quality] || 0) > (qualityOrder[existing.quality] || 0)) {
+    if (!existing) {
+      episodeMap.set(ep.episode, ep);
+      continue;
+    }
+
+    const existingQuality = QUALITY_ORDER[existing.quality] || 0;
+    const currentQuality = QUALITY_ORDER[ep.quality] || 0;
+
+    if (currentQuality > existingQuality) {
+      episodeMap.set(ep.episode, ep);
+      continue;
+    }
+
+    if (currentQuality === existingQuality && !existing.magnetLink && ep.magnetLink) {
       episodeMap.set(ep.episode, ep);
     }
   }
+
   return Array.from(episodeMap.values()).sort((a, b) => a.episode - b.episode);
 }
 
@@ -171,7 +276,7 @@ async function verifyEpisodeAired(episodeNum: number): Promise<{ name: string; a
 
 // ── Pipeline trigger ──────────────────────────────────────────────────────────
 
-async function triggerPipeline(episodes: any[], secret: string) {
+async function triggerPipeline(episodes: EpisodeCandidate[], secret: string) {
   try {
     const res = await fetch(PIPELINE_URL, {
       method: 'POST',
@@ -205,86 +310,72 @@ export async function GET(request: Request) {
 
   console.log('Checking for Rick and Morty Season 9...');
 
-  const domain = await findActiveDomain();
-  if (!domain) {
-    return NextResponse.json({ found: false, error: 'No active EZTV domain', checked: new Date().toISOString() });
+  const sourceResults = await Promise.all(SEARCH_SOURCES.map(fetchSourceEpisodes));
+  const availableSources = sourceResults.filter(result => result.episodes.length > 0);
+  const allEpisodes = sourceResults.flatMap(result => result.episodes);
+
+  if (allEpisodes.length === 0) {
+    return NextResponse.json({
+      found: false,
+      checked: new Date().toISOString(),
+      sources: sourceResults.map(result => ({ source: result.source, found: result.episodes.length, error: result.error ?? null }))
+    });
   }
 
-  try {
-    const res = await fetch(`https://${domain}/search/rick-and-morty`, {
-      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' }
-    });
-    const html = await res.text();
-    const season9Episodes = parseForSeason9(html);
+  const candidates = getBestVersions(allEpisodes);
+  console.log(`Found ${candidates.length} S9 candidate(s) across ${availableSources.length} source(s)`);
 
-    if (season9Episodes.length === 0) {
-      console.log('Season 9 not yet on EZTV');
-      return NextResponse.json({ found: false, domain, checked: new Date().toISOString() });
-    }
+  const processed = await getProcessedEpisodes();
+  const unprocessed = candidates.filter(ep => !processed.has(ep.episode));
 
-    const candidates = getBestVersions(season9Episodes);
-    console.log(`Found ${candidates.length} S9 candidate(s) on EZTV`);
-
-    // Filter out already-processed episodes
-    const processed = await getProcessedEpisodes();
-    const unprocessed = candidates.filter(ep => !processed.has(ep.episode));
-
-    if (unprocessed.length === 0) {
-      console.log('All found episodes already processed — nothing to do');
-      return NextResponse.json({
-        found: true,
-        domain,
-        alreadyProcessed: candidates.map(e => e.episode),
-        message: 'All episodes already sent to pipeline',
-        checked: new Date().toISOString()
-      });
-    }
-
-    console.log(`${unprocessed.length} new episode(s) to process, verifying against TMDB...`);
-
-    // TMDB validation — strict check, no bypass
-    const verified: any[] = [];
-    const skipped: any[] = [];
-
-    for (const ep of unprocessed) {
-      const tmdb = await verifyEpisodeAired(ep.episode);
-      if (tmdb) {
-        verified.push({ ...ep, tmdbName: tmdb.name, tmdbAirDate: tmdb.airDate });
-      } else {
-        console.log(`S09E${ep.episode} failed TMDB check — skipping`);
-        skipped.push(ep);
-      }
-    }
-
-    console.log(`Verified: ${verified.length}, Skipped: ${skipped.length}`);
-
-    if (verified.length === 0) {
-      return NextResponse.json({
-        found: false,
-        domain,
-        candidates: candidates.length,
-        skipped,
-        message: 'All found torrents are pre-air or unverified',
-        checked: new Date().toISOString()
-      });
-    }
-
-    const pipelineResult = await triggerPipeline(verified, secret);
-
-    // Mark as processed only after successful pipeline trigger
-    await markEpisodesProcessed(verified.map(e => e.episode));
-
+  if (unprocessed.length === 0) {
+    console.log('All found episodes already processed — nothing to do');
     return NextResponse.json({
       found: true,
-      domain,
-      verified: verified.map(e => ({ episode: e.episode, quality: e.quality, name: e.tmdbName, airDate: e.tmdbAirDate })),
-      skipped,
-      pipeline: pipelineResult,
+      sources: sourceResults.map(result => ({ source: result.source, found: result.episodes.length, error: result.error ?? null })),
+      alreadyProcessed: candidates.map(e => ({ episode: e.episode, source: e.source, quality: e.quality })),
+      message: 'All episodes already sent to pipeline',
       checked: new Date().toISOString()
     });
-
-  } catch (error: any) {
-    console.error('Check failed:', error.message);
-    return NextResponse.json({ found: false, error: error.message, checked: new Date().toISOString() });
   }
+
+  console.log(`${unprocessed.length} new episode(s) to process, verifying against TMDB...`);
+
+  const verified: any[] = [];
+  const skipped: EpisodeCandidate[] = [];
+
+  for (const ep of unprocessed) {
+    const tmdb = await verifyEpisodeAired(ep.episode);
+    if (tmdb) {
+      verified.push({ ...ep, tmdbName: tmdb.name, tmdbAirDate: tmdb.airDate });
+    } else {
+      console.log(`S09E${ep.episode} failed TMDB check — skipping`);
+      skipped.push(ep);
+    }
+  }
+
+  console.log(`Verified: ${verified.length}, Skipped: ${skipped.length}`);
+
+  if (verified.length === 0) {
+    return NextResponse.json({
+      found: false,
+      sources: sourceResults.map(result => ({ source: result.source, found: result.episodes.length, error: result.error ?? null })),
+      candidates: candidates.length,
+      skipped,
+      message: 'All found torrents are pre-air or unverified',
+      checked: new Date().toISOString()
+    });
+  }
+
+  const pipelineResult = await triggerPipeline(verified, secret);
+  await markEpisodesProcessed(verified.map(e => e.episode));
+
+  return NextResponse.json({
+    found: true,
+    sources: sourceResults.map(result => ({ source: result.source, found: result.episodes.length, error: result.error ?? null })),
+    verified: verified.map(e => ({ episode: e.episode, quality: e.quality, name: e.tmdbName, airDate: e.tmdbAirDate, source: e.source })),
+    skipped,
+    pipeline: pipelineResult,
+    checked: new Date().toISOString()
+  });
 }
