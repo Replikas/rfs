@@ -231,7 +231,7 @@ export async function GET(request: Request) {
     });
   }
 
-  const pipelineResult = await triggerPipeline(verified, secret);
+  const pipelineResult = await triggerPipeline(verified, collectorSecret);
   await markEpisodesProcessed(verified.map(e => e.episode));
 
   return NextResponse.json({
