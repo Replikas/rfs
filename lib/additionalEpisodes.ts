@@ -41,7 +41,7 @@ export const additionalEpisodes: Episode[] = [
   { id: 81, name: "Hot Rick", air_date: "July 27, 2025", episode: "S08E10", characters: [], url: "", created: "" },
 
   // Season 9 placeholders (kept in code so they exist for every visitor, not just one browser's localStorage)
-  { id: 82, name: "Episode 1 (TBA)", air_date: "TBA 2026", episode: "S09E01", characters: [], url: "", created: "" },
+  { id: 82, name: "Dry Run S09E01", air_date: "Test 1773235870", episode: "S09E01", characters: [], url: "dryrun-1773235870", created: "dryrun" },
   { id: 83, name: "Episode 2 (TBA)", air_date: "TBA 2026", episode: "S09E02", characters: [], url: "", created: "" },
   { id: 84, name: "Episode 3 (TBA)", air_date: "TBA 2026", episode: "S09E03", characters: [], url: "", created: "" },
   { id: 85, name: "Episode 4 (TBA)", air_date: "TBA 2026", episode: "S09E04", characters: [], url: "", created: "" },
