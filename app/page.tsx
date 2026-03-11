@@ -2,6 +2,7 @@ import { getAllEpisodes } from '@/lib/api';
 import ClientHome from '@/components/ClientHome';
 import { getThumbnailFromEpisodeCode, getEpisodeSummary } from '@/lib/tmdb';
 import HeroSection from '@/components/HeroSection';
+import { getGeneratedHeroMedia } from '@/lib/generatedHeroMedia';
 import Link from 'next/link';
 
 export const dynamic = 'force-dynamic';
@@ -19,6 +20,7 @@ export default async function Home() {
   // Fetch all thumbnails and summaries
   const thumbnails: Record<number, string> = {};
   const summaries: Record<number, string> = {};
+  const generatedHeroMedia = getGeneratedHeroMedia();
   await Promise.all(
     episodes.map(async (ep) => {
       thumbnails[ep.id] = await getThumbnailFromEpisodeCode(ep.episode);
@@ -62,7 +64,7 @@ export default async function Home() {
       </div>
 
       {/* Hero Section */}
-      <HeroSection featuredEpisodes={featuredEpisodes} summaries={summaries} />
+      <HeroSection featuredEpisodes={featuredEpisodes} summaries={summaries} generatedHeroMedia={generatedHeroMedia} />
 
       <div className="relative z-10">
         <ClientHome 

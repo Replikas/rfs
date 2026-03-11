@@ -1,6 +1,7 @@
 'use client';
 
 import { Episode } from '@/lib/api';
+import { GeneratedHeroAsset } from '@/lib/generatedHeroMedia';
 import { Play, Info, Zap } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect, useCallback } from 'react';
@@ -8,11 +9,13 @@ import { useState, useEffect, useCallback } from 'react';
 interface HeroSectionProps {
   featuredEpisodes: Episode[];
   summaries: Record<number, string>;
+  generatedHeroMedia: Record<number, GeneratedHeroAsset>;
 }
 
-export default function HeroSection({ featuredEpisodes, summaries }: HeroSectionProps) {
+export default function HeroSection({ featuredEpisodes, summaries, generatedHeroMedia }: HeroSectionProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [backdrop, setBackdrop] = useState<string>('');
+  const [heroMedia, setHeroMedia] = useState<GeneratedHeroAsset | null>(null);
   const [isPlaceholder, setIsPlaceholder] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -20,22 +23,25 @@ export default function HeroSection({ featuredEpisodes, summaries }: HeroSection
   const currentEpisode = featuredEpisodes[currentIndex];
   const currentSummary = summaries[currentEpisode.id];
 
-  const updateBackdrop = useCallback((episodeCode: string) => {
+  const updateBackdrop = useCallback((episodeCode: string, episodeId: number) => {
+    const media = generatedHeroMedia[episodeId] ?? null;
+    setHeroMedia(media);
+
     fetch(`/api/episode-backdrop?code=${episodeCode}`)
       .then(res => res.json())
       .then(data => {
-        setBackdrop(data.backdrop);
+        setBackdrop(media?.posterUrl || data.backdrop);
         setIsPlaceholder(data.isPlaceholder || false);
       })
       .catch(() => {
-        setBackdrop('https://images4.alphacoders.com/131/1313607.png');
+        setBackdrop(media?.posterUrl || 'https://images4.alphacoders.com/131/1313607.png');
         setIsPlaceholder(false);
       });
-  }, []);
+  }, [generatedHeroMedia]);
 
   useEffect(() => {
-    updateBackdrop(currentEpisode.episode);
-  }, [currentIndex, currentEpisode.episode, updateBackdrop]);
+    updateBackdrop(currentEpisode.episode, currentEpisode.id);
+  }, [currentIndex, currentEpisode.episode, currentEpisode.id, updateBackdrop]);
 
   // Auto-rotation logic
   useEffect(() => {
@@ -67,10 +73,29 @@ export default function HeroSection({ featuredEpisodes, summaries }: HeroSection
     <div className="relative h-[55vh] md:h-[95vh] w-full overflow-hidden bg-black pt-[70px] md:pt-[80px]">
       {/* Background Image with Ken Burns Effect */}
       <div className={`absolute inset-0 transition-all duration-1000 ${isExiting ? 'opacity-0 scale-110' : 'opacity-100'}`}>
-        <div 
-          className="absolute inset-0 bg-cover bg-top md:bg-center animate-ken-burns transition-opacity duration-1000"
-          style={{ backgroundImage: `url(${backdrop})` }}
-        />
+        {heroMedia?.clipUrl ? (
+          <video
+            key={heroMedia.clipUrl}
+            className="absolute inset-0 h-full w-full object-cover md:object-center"
+            src={heroMedia.clipUrl}
+            poster={heroMedia.posterUrl || backdrop}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+          />
+        ) : heroMedia?.loopUrl ? (
+          <div
+            className="absolute inset-0 bg-cover bg-top md:bg-center animate-ken-burns transition-opacity duration-1000"
+            style={{ backgroundImage: `url(${heroMedia.loopUrl})` }}
+          />
+        ) : (
+          <div 
+            className="absolute inset-0 bg-cover bg-top md:bg-center animate-ken-burns transition-opacity duration-1000"
+            style={{ backgroundImage: `url(${backdrop})` }}
+          />
+        )}
         
         {/* Cinematic Gradient Overlays */}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent z-10" />
@@ -84,6 +109,11 @@ export default function HeroSection({ featuredEpisodes, summaries }: HeroSection
         <div className="flex flex-col items-center md:items-start text-center md:text-left max-w-md md:max-w-4xl mx-auto md:mx-0 w-full mb-0 pt-0">
           {/* Animated Episode Tag */}
           <div className="flex items-center gap-2 mb-2 animate-fade-in">
+            {heroMedia?.clipUrl && (
+              <span className="bg-[var(--accent)]/20 text-[var(--accent-glow)] border border-[var(--accent-glow)]/40 px-2 py-0.5 rounded-full text-[8px] md:text-[10px] font-black tracking-[0.2em] uppercase">
+                Motion Hero
+              </span>
+            )}
             <span className="flex items-center gap-1.2 bg-black/40 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-white/10 text-white/90 text-[9px] md:text-xs font-black tracking-[0.2em] uppercase">
               <Zap size={10} className="text-[var(--accent)] fill-current" />
               S{currentEpisode.episode.substring(1, 3)} • E{currentEpisode.episode.substring(4)}

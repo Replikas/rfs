@@ -1,0 +1,12 @@
+{
+  "source": "/tmp/episode-1.mp4",
+  "generatedAt": "2026-03-11T23:15:00.000Z",
+  "start": "00:00:30",
+  "duration": 12,
+  "outputs": {
+    "mp4": "public/generated-clips/episode-1-hero.mp4",
+    "webp": "public/generated-clips/episode-1-hero.webp",
+    "poster": "public/generated-clips/episode-1-hero.jpg"
+  },
+  "measuredDuration": 12
+}
