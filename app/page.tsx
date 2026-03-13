@@ -2,6 +2,7 @@ import { getAllEpisodes } from '@/lib/api';
 import ClientHome from '@/components/ClientHome';
 import { getThumbnailFromEpisodeCode, getEpisodeSummary } from '@/lib/tmdb';
 import HeroSection from '@/components/HeroSection';
+import SceneFinder from '@/components/SceneFinder';
 import { getGeneratedHeroMedia } from '@/lib/generatedHeroMedia';
 import Link from 'next/link';
 
@@ -67,6 +68,7 @@ export default async function Home() {
       <HeroSection featuredEpisodes={featuredEpisodes} summaries={summaries} generatedHeroMedia={generatedHeroMedia} />
 
       <div className="relative z-10">
+        <SceneFinder />
         <ClientHome 
           initialEpisodes={episodes} 
           thumbnails={thumbnails} 
