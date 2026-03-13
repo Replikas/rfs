@@ -23,6 +23,8 @@ export default function WatchPage() {
   const [duration, setDuration] = useState(0);
   const [audioError, setAudioError] = useState(false);
 
+  const NEXT_EPISODE_PREVIEW_SECONDS = 8;
+
   // Use dynamic URL if provided, otherwise fallback to R2
   const finalVideoUrl = (episode && episode.url && (episode.url.includes('.mp4') || episode.url.includes('.m3u8'))) 
     ? episode.url 
@@ -81,9 +83,9 @@ export default function WatchPage() {
     }
     
     const timeRemaining = video.duration - video.currentTime;
-    if (timeRemaining <= 30 && timeRemaining > 0 && nextEpisodeId && !showNextEpisode) {
+    if (timeRemaining <= NEXT_EPISODE_PREVIEW_SECONDS && timeRemaining > 0 && nextEpisodeId && !showNextEpisode) {
       setShowNextPreview(true);
-    } else if (timeRemaining > 30) {
+    } else if (timeRemaining > NEXT_EPISODE_PREVIEW_SECONDS) {
       setShowNextPreview(false);
     }
   };
@@ -167,9 +169,11 @@ export default function WatchPage() {
               setDuration(dur);
               setVideoLoading(false); // Video is playing
               
-              // Show next episode preview in last 30 seconds
-              if (dur - time <= 30 && dur - time > 0) {
+              // Only show next episode preview when the file is basically over.
+              if (dur - time <= NEXT_EPISODE_PREVIEW_SECONDS && dur - time > 0) {
                 setShowNextPreview(true);
+              } else if (dur - time > NEXT_EPISODE_PREVIEW_SECONDS) {
+                setShowNextPreview(false);
               }
             }}
             onError={() => {
