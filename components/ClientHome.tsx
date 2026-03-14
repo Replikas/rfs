@@ -41,8 +41,8 @@ export default function ClientHome({ initialEpisodes, thumbnails, summaries }: C
       {/* Season 9 Announcement Marquee */}
       <div className="relative mx-4 md:mx-12 mb-4 overflow-hidden">
         <div className="animate-marquee whitespace-nowrap text-sm md:text-base font-bold tracking-wide text-[var(--accent-glow)]">
-          <span className="inline-block px-8">🛸 SEASON 9 PREMIERES MAY 24TH — NEW EPISODES EVERY SUNDAY AT 11PM ON ADULT SWIM 🛸</span>
-          <span className="inline-block px-8">🛸 SEASON 9 PREMIERES MAY 24TH — NEW EPISODES EVERY SUNDAY AT 11PM ON ADULT SWIM 🛸</span>
+          <span className="inline-block px-8">🛸 SEASON 9 PREMIERES MAY 24TH — NEW EPISODES EVERY SUNDAY ON RICKFLIX, RIGHT AFTER THEY AIR ON ADULT SWIM 🛸</span>
+          <span className="inline-block px-8">🛸 SEASON 9 PREMIERES MAY 24TH — NEW EPISODES EVERY SUNDAY ON RICKFLIX, RIGHT AFTER THEY AIR ON ADULT SWIM 🛸</span>
         </div>
       </div>
 
