@@ -38,6 +38,14 @@ export default function ClientHome({ initialEpisodes, thumbnails, summaries }: C
 
   return (
     <div className="pb-12 relative z-10">
+      {/* Season 9 Announcement Marquee */}
+      <div className="relative mx-4 md:mx-12 mb-4 overflow-hidden">
+        <div className="animate-marquee whitespace-nowrap text-sm md:text-base font-bold tracking-wide text-[var(--accent-glow)]">
+          <span className="inline-block px-8">🛸 SEASON 9 PREMIERES MAY 24TH — NEW EPISODES EVERY SUNDAY AT 11PM ON ADULT SWIM 🛸</span>
+          <span className="inline-block px-8">🛸 SEASON 9 PREMIERES MAY 24TH — NEW EPISODES EVERY SUNDAY AT 11PM ON ADULT SWIM 🛸</span>
+        </div>
+      </div>
+
       {/* Search Bar Container - ABSOLUTELY FIXED AT TOP FOR ALL SIZES */}
       <div className="relative mx-4 mb-8 md:mx-12 md:max-w-sm md:ml-auto z-10">
         <div className="w-full md:max-w-sm relative group">
