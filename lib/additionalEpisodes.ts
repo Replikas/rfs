@@ -51,5 +51,4 @@ export const additionalEpisodes: Episode[] = [
   { id: 89, name: "Episode 8 (TBA)", air_date: "TBA 2026", episode: "S09E08", characters: [], url: "", created: "" },
   { id: 90, name: "Episode 9 (TBA)", air_date: "TBA 2026", episode: "S09E09", characters: [], url: "", created: "" },
   { id: 91, name: "Episode 10 (TBA)", air_date: "TBA 2026", episode: "S09E10", characters: [], url: "", created: "" },
-  { id: 179, name: "Episode 99 (Pipeline Test)", air_date: "Test 2026", episode: "S09E99", characters: [], url: "", created: "" },
 ];
