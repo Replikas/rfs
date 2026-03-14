@@ -1,0 +1,14 @@
+{
+  "defaults": {
+    "start": "00:00:30",
+    "duration": 12,
+    "label": "hero"
+  },
+  "episodes": {
+    "episode-1": {
+      "start": "00:00:30",
+      "duration": 12,
+      "label": "hero"
+    }
+  }
+}
