@@ -10,12 +10,21 @@ export const dynamic = 'force-dynamic';
 export default async function Home() {
   const episodes = await getAllEpisodes();
   
-  // Hero should showcase real aired episodes, not placeholder Season 9 entries.
-  const heroEligibleEpisodes = episodes
+  // S9 episodes with real content (not placeholders) get hero priority.
+  // Placeholder S9 entries have air_date "TBA 2026" and empty name patterns.
+  const isRealS9 = (e: any) =>
+    e.episode.startsWith('S09') && !e.air_date.includes('TBA') && !e.name.includes('(TBA)');
+
+  const s9Episodes = episodes.filter(isRealS9).sort((a, b) => b.id - a.id);
+  const otherEpisodes = episodes
     .filter(e => !e.episode.startsWith('S09'))
     .sort(() => 0.5 - Math.random());
 
-  const featuredEpisodes = heroEligibleEpisodes.slice(0, 5);
+  // S9 first, then fill remaining slots with random older episodes
+  const featuredEpisodes = [
+    ...s9Episodes.slice(0, 5),
+    ...otherEpisodes.slice(0, Math.max(0, 5 - s9Episodes.length)),
+  ].slice(0, 5);
 
   // Fetch all thumbnails and summaries
   const thumbnails: Record<number, string> = {};
