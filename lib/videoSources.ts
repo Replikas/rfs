@@ -3,7 +3,13 @@
 
 export const videoSources: Record<string, string> = {};
 
+// Cache-bust map: bump version when a video is re-encoded
+const cacheBust: Record<string, number> = {
+  '61': 3, // S06E10 replaced 2026-03-23
+};
+
 export function getVideoUrl(id: string) {
   // Direct raw R2 MP4
-  return `https://pub-31bfa27fce4142d7895e90af0a51d430.r2.dev/videos/episode-${id}.mp4`;
+  const v = cacheBust[id] ? `?v=${cacheBust[id]}` : '';
+  return `https://pub-31bfa27fce4142d7895e90af0a51d430.r2.dev/videos/episode-${id}.mp4${v}`;
 }
