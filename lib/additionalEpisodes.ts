@@ -40,15 +40,15 @@ export const additionalEpisodes: Episode[] = [
   { id: 80, name: "Morty Daddy", air_date: "July 20, 2025", episode: "S08E09", characters: [], url: "", created: "" },
   { id: 81, name: "Hot Rick", air_date: "July 27, 2025", episode: "S08E10", characters: [], url: "", created: "" },
 
-  // Season 9 placeholders (kept in code so they exist for every visitor, not just one browser's localStorage)
-  { id: 82, name: "Episode 1 (TBA)", air_date: "TBA 2026", episode: "S09E01", characters: [], url: "", created: "" },
-  { id: 83, name: "Episode 2 (TBA)", air_date: "TBA 2026", episode: "S09E02", characters: [], url: "", created: "" },
-  { id: 84, name: "Episode 3 (TBA)", air_date: "TBA 2026", episode: "S09E03", characters: [], url: "", created: "" },
-  { id: 85, name: "Episode 4 (TBA)", air_date: "TBA 2026", episode: "S09E04", characters: [], url: "", created: "" },
-  { id: 86, name: "Episode 5 (TBA)", air_date: "TBA 2026", episode: "S09E05", characters: [], url: "", created: "" },
-  { id: 87, name: "Episode 6 (TBA)", air_date: "TBA 2026", episode: "S09E06", characters: [], url: "", created: "" },
-  { id: 88, name: "Episode 7 (TBA)", air_date: "TBA 2026", episode: "S09E07", characters: [], url: "", created: "" },
-  { id: 89, name: "Episode 8 (TBA)", air_date: "TBA 2026", episode: "S09E08", characters: [], url: "", created: "" },
-  { id: 90, name: "Episode 9 (TBA)", air_date: "TBA 2026", episode: "S09E09", characters: [], url: "", created: "" },
-  { id: 91, name: "Episode 10 (TBA)", air_date: "TBA 2026", episode: "S09E10", characters: [], url: "", created: "" },
+  // Season 9 placeholders with known premiere cadence
+  { id: 82, name: "Episode 1 (TBA)", air_date: "May 24, 2026", episode: "S09E01", characters: [], url: "", created: "" },
+  { id: 83, name: "Episode 2 (TBA)", air_date: "May 31, 2026", episode: "S09E02", characters: [], url: "", created: "" },
+  { id: 84, name: "Episode 3 (TBA)", air_date: "June 7, 2026", episode: "S09E03", characters: [], url: "", created: "" },
+  { id: 85, name: "Episode 4 (TBA)", air_date: "June 14, 2026", episode: "S09E04", characters: [], url: "", created: "" },
+  { id: 86, name: "Episode 5 (TBA)", air_date: "June 21, 2026", episode: "S09E05", characters: [], url: "", created: "" },
+  { id: 87, name: "Episode 6 (TBA)", air_date: "June 28, 2026", episode: "S09E06", characters: [], url: "", created: "" },
+  { id: 88, name: "Episode 7 (TBA)", air_date: "July 5, 2026", episode: "S09E07", characters: [], url: "", created: "" },
+  { id: 89, name: "Episode 8 (TBA)", air_date: "July 12, 2026", episode: "S09E08", characters: [], url: "", created: "" },
+  { id: 90, name: "Episode 9 (TBA)", air_date: "July 19, 2026", episode: "S09E09", characters: [], url: "", created: "" },
+  { id: 91, name: "Episode 10 (TBA)", air_date: "July 26, 2026", episode: "S09E10", characters: [], url: "", created: "" },
 ];
